@@ -1,0 +1,402 @@
+﻿<html>
+
+<head>
+
+    <link rel="stylesheet" href="/MyCSS/registeredUser.css">
+    <script src="https://apis.google.com/js/client:platform.js?onload=onLoad" async defer></script>
+    <meta name="google-signin-client_id" content="463745004028-nlij9588c7nm644cefk7visnss20m6h3.apps.googleusercontent.com">
+
+    <script src="~/Scripts/toaster.js"></script>
+    <script src="~/MyScripts/jquery-2.1.1.js"></script>
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="~/MyScripts/jquery-ui.js"></script>
+    <script src="~/MyScripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#bDate1").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+    </script>
+
+    <link href="~/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link href="~/MyCSS/custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/MyCSS/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="/MyCSS/style.css"> <!-- Resource style -->
+
+    <script src="~/MyScripts/modernizr.js"></script>
+
+    <script src="~/Scripts/angular.min.js"></script>
+
+    @*Add Bootstrapfiles here*@
+    <script src="~/MyScripts/after_login.js"></script>
+
+    <script src="~/MyScripts/main.js"></script>
+
+
+    <style>
+        body {
+            font-family: 'Open sans' !important;
+            font-size: 13px;
+            color: #888888;
+            font-weight: 300;
+        }
+
+        .body-left-column-menu-option li a {
+            color: #c3c1c1;
+        }
+
+            .body-left-column-menu-option li a,
+            .body-left-column-menu-option li a:link,
+            .body-left-column-menu-option li a:visited {
+                text-decoration: none;
+            }
+
+                .body-left-column-menu-option li a:hover {
+                    color: #16a085;
+                }
+
+        .wrapper {
+            width: 50%;
+            margin: 3em auto;
+        }
+
+        a.navbar-header:active {
+            color: #666666;
+        }
+
+        a.navbar-header:link {
+            color: #FFFFFF;
+        }
+
+        a.navbar-header:visited {
+            color: #CCCCCC;
+        }
+
+        a.navbar-header:hover {
+            color: #666666;
+        }
+
+        a.navbar-header {
+            font-size: 30px;
+            padding-left: 20px;
+            font-family: 'Open Sans';
+        }
+
+
+        .masonry {
+            margin: 1.5em 0;
+            padding: 0;
+            -moz-column-gap: 1.5em;
+            -webkit-column-gap: 1.5em;
+            column-gap: 1.5em;
+            font-size: .85em;
+        }
+
+        .item {
+            display: inline-block;
+            background: #E9EAED;
+            width: 93% !important; 
+            padding: 10px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 15px;
+        }
+
+        @@media only screen and (min-width: 400px) {
+            .masonry {
+                -moz-column-count: 1;
+                -webkit-column-count: 1;
+                column-count: 1;
+            }
+        }
+
+        @@media only screen and (min-width: 700px) {
+            .masonry {
+                -moz-column-count: 2;
+                -webkit-column-count: 2;
+                column-count: 2;
+            }
+        }
+
+        @@media only screen and (min-width: 900px) {
+            .masonry {
+                -moz-column-count: 2;
+                -webkit-column-count: 2;
+                column-count: 2;
+            }
+        }
+
+        @@media only screen and (min-width: 1100px) {
+            .masonry {
+                -moz-column-count: 2;
+                -webkit-column-count: 2;
+                column-count: 2;
+            }
+        }
+
+        @@media only screen and (min-width: 1280px) {
+            .wrapper {
+                width: 1260px;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="main-header">
+
+        <div class="site-name">
+            <span class="site-name-font">
+                <img src="~/images/AndhimaLogo.png" />
+            </span>
+        </div>
+
+        <div class="search-bar">
+            <form method="get" action="/search" id="search">
+                <input name="q" type="text" size="40" placeholder="Search..." />
+            </form>
+        </div>
+
+        <div class="user-details">
+            <p id="user-name"></p>
+            <div class="dropdownButton">
+                <button style="background:none;border:none;outline:none;">
+                    <img src="../img/user.png" id="user-image">
+                    <div id="myDropdown" class="dropdown-content" style="z-index:1000 !important;">
+                       
+                        <a href="/Profile/Index">Edit Profile</a>
+                        <a href="#" class="logout">Logout</a>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="body-container col-md-12">
+        <div class="col-md-2">
+
+            <ul class="body-left-column-menu-option">
+                <li><a href="/Registered/Index">Announcement</a></li>
+                <li><a href="/Registered/LendAHand">Lend A Hand</a></li>
+                <li><a href="/TimeLine/Index">TimeLine</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class=" col-md-8" style="background-color:#f6f7f8;">
+
+            <div class="row">
+
+
+                <div class="masonry">
+
+                    <div class="item" id="nameetc">
+
+                        <div style="width:100%;float:left;margin-bottom:10px;padding-right:5px;">
+                            <button type="button" style="background-image:url('../images/pencil.png');background-size:contain;border:none;outline:none;height:20px;width:20px;float:right;" id="nameofperson"></button>
+                        </div>
+                        <div>
+                            <img src="~/images/1.jpg" class="img-circle" id="dp" style="height:60px;width:60px;border:1px solid white;box-shadow:2px 1px 2px #888888;float:left; margin-top:-32px;" />
+                        </div>
+
+                        <input type="text" id="fname" disabled style="color:black;background:none;border:none;outline:none;font-family:'Open Sans';font-size:13px;padding-right:50px;text-align:right;" value="" />
+                        <input type="text" id="lname" disabled style="color:black;background:none;border:none;outline:none; font-family:'Open Sans';font-size:13px; padding-right:50px;text-align:right;" value="" />
+
+                        <div>
+                            <label style="background:none;border:none;outline:none; font-family:' Open Sans';font-size:13px;">Gender: </label><input type="text" id="gender" disabled style="background:none;color:black;border:none;outline:none; font-family:'Helvetica Neue LT Std';font-size:15px;" /><br />
+                            <label style="background:none;border:none;outline:none; font-family:' Open Sans';font-size:13px;">BirthDate: </label><input type="text" id="bdate" disabled style="background:none;color:black;border:none;outline:none; font-family:'Helvetica Neue LT Std';font-size:15px;" /><br />
+                            <label style="background:none;border:none;outline:none; font-family:' Open Sans';font-size:13px;">Contact Number: </label><input type="text" id="phn" disabled style="background:none;color:black;border:none;outline:none; font-family:'Helvetica Neue LT Std';font-size:15px;" />
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="item" id="nameetcedit">
+                        <img src="#" id="image1" style="height:100px;width:100px;border:1px solid white;box-shadow:2px 1px 2px #888888;float:left; margin-top:10px;"/>
+                        <button type="button" data-toggle="modal" data-target="#myModal" style="background-color:rgba(0,0,0,0.8);height:30px;width:100px;color:white;border:none;float:left;z-index:-1;">Update Profile Picture</button>
+                        <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Update Profile Picture</h4>
+      </div>
+      <div class="modal-body">
+         @using (Html.BeginForm("FileUpload", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            { 
+                                <div id="viewport">
+                                <img src="#" id="image" style="height:60px;width:60px;border:1px solid white;box-shadow:2px 1px 2px #888888;float:left; margin-top:-32px;"/>
+                                </div>
+                                <label for="file">Upload Image:</label>
+                                <input type="file" name="file" id="file" class="btn btn-success" /><br />
+                                <input type="submit" value="Upload" class="submit btn btn-success" />
+                            }
+      </div>
+       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+             
+                        <div class="form-group" style="margin-top:20px;">
+                            <label>First Name: </label><input type="text" id="fname1" class="form-control" style="background:none;font-family:'Open Sans';padding-right:50px;padding-left:50px;text-align:right;width:300px;" />
+                            <label>Last Name: </label><input type="text" id="lname1" class="form-control" style="background:none; font-family:' Open Sans ';padding-right:50px;text-align:right;width:300px;" /><br />
+                            <hr />
+                            <div style="padding:15px;margin-left:10px;float:left;">
+                                <label>Select Gender: </label>
+                                <select id="gender1" class="form-control" style="width:400px;">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select><br />
+                                <label>Birth Date: </label><input type="text" class="form-control" id="bDate1" style="background:none; font-family:'Open Sans';" /><br />
+                                <label>Contact Number: </label><input type="text" id="phn1" class="form-control" style="background:none;font-family:'Open Sans';" />
+                                <hr />
+                            </div>
+                            <button id="savename">Save</button>
+                             <button id="cancel">Cancel</button>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="item" id="personal">
+
+                        <div style="width:100%;float:left;margin-bottom:10px;padding-right:5px;height:100px;">
+                            <div id="title1" style="margin-bottom:10px;color:#888888;font-size:14px;float:left;">Personal Info</div>
+                            <button type="button" style="background-image:url('../images/pencil.png');background-size:contain;border:none;outline:none;height:20px;width:20px;float:right;" id="personbtn"></button>
+                        </div>
+                        <div style="padding:5px;margin-left:10px;float:left;">
+                            <input id="name1" style="color:#888888;font-size:13px;border:none;background:none;" value="Age: 25" disabled><br />
+                            <input type="text" id="email1" disabled value="Marital Status: Unmarried" style="border:none;background:none;color:#888888;font-size:13px;font-family:'Open Sans'!important;">
+                        </div>
+                    </div>
+
+                    <div class="item" id="personaledit">
+
+                        <div style="width:100%;float:left;margin-bottom:10px;padding-right:5px;height:100px;">
+                            <div id="title1edit" style="margin-bottom:10px;color:#888888;font-size:14px;float:left;">Personal Info</div>
+                        </div>
+                        <div style="padding:5px;margin-left:10px;float:left;">
+                            <input id="name1edit" style="color:darkgray;font-size:13px;" value="Age: 25"><br />
+                            <input type="text" id="email1edit" value="Marital Status: Unmarried" style="color:#888888;font-size:13px;">
+                        </div>
+                        <button id="saveper">Save</button>
+                    </div>
+
+                    <div class="item" id="prof">
+                        <div style="width:100%;float:left;margin-bottom:10px;padding-right:5px;height:100px;">
+                            <div id="title2" style="margin-bottom:10px;color:#888888;font-size:14px;float:left;">Professional</div>
+                            <button type="button" style="background-image:url('../images/pencil.png');background-size:contain;border:none;outline:none;height:20px;width:20px;float:right;" id="profbtn"></button>
+                        </div>
+                        <div style="padding:5px;margin-left:10px;float:left;">
+                            <input id="name2" style="color:#888888;font-size:13px;;border:none;background:none;" value="Occupation:Service" disabled><br />
+                            <input type="text" id="email2" disabled value="Works at: Capegemini" style="border:none;background:none;color:#888888;font-size:13px;">
+                        </div>
+                    </div>
+
+                    <div class="item" id="profedit">
+                        <div style="width:100%;float:left;margin-bottom:10px;padding-right:5px;height:100px;">
+                            <div id="title2edit" style="margin-bottom:10px;color:#888888;font-size:14px;float:left;">Professional</div>
+
+                        </div>
+                        <div style="padding:5px;margin-left:10px;float:left;">
+                            <input id="name2edit" style="color:#888888;font-size:14px;" value="Occupation:Service"><br />
+                            <input type="text" id="email2edit" value="Works at: Capegemini" style="color:#888888;font-size:13px;">
+                        </div>
+                        <button id="saveprof">Save</button>
+                    </div>
+
+                    <div class="item" id="edu">
+                        <div style="width:100%;float:left;margin-bottom:10px;padding-right:5px;height:60px;">
+                            <div id="title4" style="margin-bottom:10px;color:#888888;font-size:14px;float:left;">Education</div>
+                            <button type="button" style="background-image:url('../images/pencil.png');background-size:contain;border:none;outline:none;height:20px;width:20px;float:right;" id="edubtn"></button>
+                        </div>
+                        <div style="padding:5px;margin-left:10px;float:left;">
+                            <input id="name3" style="color:#888888;font-size:13px;background:none;border:none;" value="B.Tech Mechanical Engineering" disabled><br />
+                            <input type="text" id="email3" value="MBA from IIM Ahmedabad" style="color:#888888;font-size:13px;background:none;border:none;" disabled>
+                        </div>
+                    </div>
+                    <div class="item" id="eduedit">
+                        <div style="width:100%;float:left;margin-bottom:10px;padding-right:5px;height:60px;">
+                            <div id="title4edit" style="margin-bottom:10px;color:#888888;font-size:14px;float:left;">Education</div>
+                        </div>
+                        <div style="padding:15px;margin-left:10px;float:left;">
+                            <input id="name3edit" style="color:darkgray;font-size:13px;" value="B.Tech Mechanical Engineering"><br />
+                            <input type="text" id="email3edit" value="MBA from IIM Ahmedabad" style="color:#888888;font-size:13px;">
+                        </div>
+                        <button id="saveedu">Save</button>
+                    </div>
+                    <div class="item">
+                        <div style="width:100%;float:left;margin-top:10px;padding-right:5px;">
+                            <div id="title" style="margin-bottom:10px;color:#888888;font-size:14px;float:left;">Profile Strength</div>
+                            <button type="button" style="background:none;border:none;outline:none;height:20px;width:20px;float:right;">
+                                <img src="~/images/pencil.png" style="height:20px;width:20px;" />
+                            </button>
+                        </div>
+                        <canvas id="myChart" width="200" height="120" style="margin-left:150px;"></canvas>
+                    </div>
+                    <div class="item">
+                        <div style="width:100%;float:left;margin-bottom:10px;padding-right:5px;height:120px;">
+                            <div id="title5" style="margin-bottom:10px;color:#888888;font-size:14px;float:left;">Nominees Details</div>
+                            <button type="button" style="background:none;border:none;outline:none;height:20px;width:20px;float:right;">
+                                <img src="~/images/pencil.png" style="height:20px;width:20px;" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="width:100%;float:left;margin-bottom:10px;padding-right:5px;height:120px;">
+                            <div id="title6" style="margin-bottom:10px;color:#888888;font-size:13px;float:left;">Contact Info</div>
+                            <button type="button" style="background:none;border:none;outline:none;height:20px;width:20px;float:right;">
+                                <img src="~/images/pencil.png" style="height:20px;width:20px;" />
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="item">
+                        <div style="width:100%;float:left;margin-bottom:10px;padding-right:5px;height:200px;">
+                            <div id="title7" style="margin-bottom:10px;color:#888888;font-size:14px;float:left;">Groups</div>
+                            <button type="button" style="background:none;border:none;outline:none;height:20px;width:20px;float:right;">
+                                <img src="~/images/pencil.png" style="height:20px;width:20px;" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+
+
+    <!--ggfhfj-->
+
+    <script src="~/MyScripts/Profile.js"></script>
+</body>
+</html>

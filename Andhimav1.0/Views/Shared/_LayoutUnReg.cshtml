@@ -1,0 +1,123 @@
+﻿<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+
+<link href="~/CSS/UnRegLayout.css" rel="stylesheet" />
+
+<script src="~/Scripts/angular.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+        @*<style>
+            a.navbar-header:active {
+                color: #666666;
+            }
+
+            a.navbar-header:link {
+                color: #FFFFFF;
+                font-size: 14px;
+                font-family:'Open sans';
+            }
+
+            a.navbar-header:visited {
+                color: #ffffff;
+            }
+
+            a.navbar-header:hover {
+                color: #666666;
+            }
+
+            a.navbar-header {
+                font-size: 30px;
+                padding-left: 20px;
+                font-family: 'Monotype Grotesque';
+            }
+
+
+
+            a.navbar-brand:active {
+                color: #666666;
+            }
+
+            a.navbar-brand:link {
+                color: #FFFFFF;
+                font-size: 14px;
+                font-family:'Open sans';
+            }
+
+            a.navbar-brand:visited {
+                color: #ffffff;
+            }
+
+            a.navbar-brand:hover {
+                color: #666666;
+            }
+
+            a.navbar-brand {
+                font-size: 15px;
+                padding-right: 20px;
+            }
+            /*input {
+                padding: 5px;
+                background: url('Icons and Images/android-search_icon.png');
+                background-repeat: no-repeat;
+                background-position: right;
+            }*/
+
+            .search-query {
+                background: url('../images/android-search_icon.png') no-repeat right;
+                background-color: white;
+            }
+
+            /*.search_field {
+                display: inline-block;
+                border: 1px inset #ccc;
+            }
+
+                .search_field input {
+                    border: none;
+                    padding: 0;
+                }
+
+                .search_field button {
+                    border: none;
+                    background: none;
+                }*/
+        </style>*@
+</head>
+<body>
+    <div class="main-header">
+
+        <div class="site-name">
+            <span class="site-name-font">andhima</span>
+        </div>
+
+        <div class="search-bar">
+            <form method="get" action="/search" id="search">
+                <input name="q" type="text" size="40" placeholder="Search..." />
+            </form>
+        </div>
+
+
+        <ul class="nav navbar-nav" style="float:right">
+            <li>@Html.ActionLink("Register", "Index", "Home", null, new { @class = "navbar-brand" })</li>
+            <li>@Html.ActionLink("Sign In", "Login", "Home", null, new { @class = "navbar-brand" })</li>
+
+        </ul>
+    </div>
+    @*<div class="container body-content">*@
+    @RenderBody()
+    <hr />
+    <footer>
+        <p style="padding-left:10px">&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+    @*</div>*@
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

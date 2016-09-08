@@ -1,0 +1,168 @@
+﻿@{
+    //Layout = "~/Views/Shared/_LayoutUnReg.cshtml";
+    ViewBag.Title = "Profile";
+}
+<link rel="stylesheet" href="/MyCSS/registeredUser.css">
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.js"></script>
+<script src="~/MyScripts/jquery-ui.js"></script>
+<script type="text/javascript">
+        </script>
+<style>
+
+ body {
+        background-color:lightgrey ;
+    }
+
+.wrapper {
+    width: 50%;
+    margin: 1em auto;
+}
+  a.navbar-header:active {
+            color: #666666;
+        }
+
+        a.navbar-header:link {
+            color: #FFFFFF;
+        }
+
+        a.navbar-header:visited {
+            color: #CCCCCC;
+        }
+        a.navbar-header:hover {
+            color: #666666;
+        }
+        a.navbar-header {
+            font-size: 30px;
+            padding-left:20px;
+            font-family: 'Monotype Grotesque';
+        }
+
+
+.masonry {
+    margin: 5px 0;
+    padding: 0;
+    -moz-column-gap: 10px;
+    -webkit-column-gap: 10px;
+    column-gap: 10px;
+    font-size: .85em;
+}
+
+.item {
+    display: inline-block;
+    width:100%;
+    text-align:center;
+        height:400px;
+        background-color:white;
+        border-radius:10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-bottom:20px;
+}
+.avatar {
+        height:15px;
+        width:15px;
+    }
+.title {
+        width:100%;
+        text-align:center;
+        font-size:35px;
+        font-family:'Helvetica Neue LT Std';
+        color:grey;
+    }
+.name {
+        width:100%;
+        text-align:center;
+        font-size:20px;
+        text-align:center;
+        font-family:'Helvetica Neue LT Std';
+        color:darkgray;
+        margin-bottom:5%;
+    }
+.mainimg {
+        background-color:burlywood;
+        width:100%;
+        height:55%;
+        text-align:center;
+    }
+hr {
+         border: 0;
+         height: 1px;
+         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        width:90%;
+    }
+
+@@media only screen and (min-width: 400px) {
+    .masonry {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@@media only screen and (min-width: 700px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@@media only screen and (min-width: 1100px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@@media only screen and (min-width: 1280px) {
+    .wrapper {
+        width: 1260px;
+    }
+}
+</style>
+
+<div class="container-fluid">
+    <div class="main-header">
+
+        <div class="site-name">
+            <span class="site-name-font">andhima</span>
+        </div>
+
+        <div class="search-bar">
+            <form method="get" action="/search" id="search">
+                <input name="q" type="text" size="40" placeholder="Search..." />
+            </form>
+        </div>
+
+        <div class="user-details">
+            <p id="user-name"></p>
+            @using (Html.BeginForm("Index", "Profile"))
+            {
+                <button style="background:none;border:none;outline:none;">
+                <img src="../img/user.png" id="user-image">
+                    </button>
+            }
+        </div>
+
+    </div>
+
+	<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10">
+	<div class="masonry" id="divRow"></div>
+	</div>
+    <div class="col-sm-1"></div>
+	</div>
+    </div>
+<script src="~/MyScripts/TestAnnouncements.js"></script>

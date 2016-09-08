@@ -1,0 +1,121 @@
+﻿@font-face {
+    font-family: 'general-font';
+    font-style: normal;
+    font-weight: 400;
+    src: @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+}
+
+@font-face {
+  font-family: 'Header-font';
+ 
+  src: url(@import url(https://fonts.googleapis.com/css?family=Raleway:600);
+
+  
+}
+*
+{
+    font-family:general-font;
+}
+
+		.main-header
+		{
+			background-color: #16a085;
+			width: 100%;
+			height: 65px;
+			/*display: inline-flex;*/
+
+			text-align:center;
+			
+		}
+
+		.site-name-font
+		{
+			font-family: Header-font;
+			font-size: 52px;
+			padding:6px 0px 15px 25px;
+			color: #ffffff;
+		}
+
+		.site-name
+		{
+			float: left;
+		}
+
+		body
+		{
+			margin: 0px;
+		}
+
+
+
+		#search input[type="text"] 
+		{
+		    background: url(../images/magnifier-white.png) no-repeat 10px 6px #11866f;
+		    border: 0 none;
+		    font: bold 12px Arial,Helvetica,Sans-serif;
+		    color: #d7d7d7;
+		    width:300px;
+		    padding: 6px 15px 6px 35px;
+		    -webkit-border-radius: 20px;
+		    -moz-border-radius: 20px;
+		    border-radius: 20px;
+		    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); 
+		    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    -webkit-transition: all 0.7s ease 0s;
+		    -moz-transition: all 0.7s ease 0s;
+		    -o-transition: all 0.7s ease 0s;
+		    transition: all 0.7s ease 0s;
+    	}
+
+	#search input[type="text"]:focus
+	 	{
+		    background: url(../images/magnifier-grey.png) no-repeat 10px 6px #fcfcfc;
+		    color: #6a6f75;
+		    width: 350px;
+		    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    	}
+
+		.search-bar 
+		{	
+			/*margin-left: 27%;*/
+			/*width:85%;*/
+
+			text-align:left;
+		    
+		    margin:0 auto !important; 
+		   display:inline-block;
+		    
+		}
+
+		.search-bar form
+		{
+			padding-top: 20px;
+
+		}
+
+        a.navbar-brand:active {
+            color: #666666;
+        }
+
+        a.navbar-brand:link {
+            color: #FFFFFF;
+        }
+
+        a.navbar-brand:visited {
+            color: #ffffff;
+        }
+
+        a.navbar-brand:hover {
+            color: #666666;
+        }
+
+        a.navbar-brand {
+            text-align:center;
+            font-size: 18px;
+            padding-right: 20px;
+        }

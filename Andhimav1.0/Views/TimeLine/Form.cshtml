@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutUnReg.cshtml";
+    ViewBag.Title = "Form";
+}
+
+<!DOCTYPE html> 
+<html>
+<head> 
+	<title>Event </title>
+	<meta name="robots" content="noindex, nofollow">	
+    <link href="~/MyCSS/Event_form.css" rel="stylesheet" />
+    <script src="~/MyScripts/Form.js"></script>
+	<script type="text/javascript">
+	
+</script>
+</head> 
+
+ <body id ="bdy" style="overflow:hidden;">
+ 
+ <div id="abc">
+ 
+	
+ <div id="popupContact"> 
+
+	
+		<form action="#" method="post" id="form" >
+			<img src="~/Images/cancel.png" id="close" onclick ="div_hide()" />
+			<h2>Event</h2><hr/>
+			<input type="text" name="name" id="name" placeholder="Name"/>
+			
+			
+			<textarea name="message" placeholder="Message" id="msg"></textarea>
+			
+         <div>
+             <label class="category"> Category </label>
+             
+             <br />
+             <br />
+        <input type="radio" id="C1" name="radio" value="1"/>
+        <label for="C1"><span></span>Anguish</label>
+             <br />
+             <br />
+             <input type="radio" id="C2" name="radio" value="2" />
+        <label for="C2"><span></span>Dismay</label>
+             <br />
+             <br />
+             <input type="radio" id="C3" name="radio" value="3"/>
+        <label for="C3"><span></span>Grief</label>
+             <br />
+             <br />
+             <input type="radio" id="C4" name="radio" value="4"/>
+        <label for="C4"><span></span>Shock</label>
+             <br />
+             <br />
+        <input type="radio" id="C5" name="radio" value="5"/>
+        <label for="C5"><span></span>Sorrowful</label>
+         </div>
+
+       
+			<a id="submit" href="javascript: check_empty()">Submit</a>
+			
+			
+		</form>
+ </div> 
+
+ </div>
+
+    
+	        <button id = "popup" onclick ="div_show()">Add Event</button>
+
+ </body> 
+
+ </html> 

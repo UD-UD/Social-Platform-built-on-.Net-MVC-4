@@ -1,0 +1,310 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="/MyCSS/registeredUser.css">
+    <script src="https://apis.google.com/js/client:platform.js?onload=onLoad" async defer></script>
+    <meta name="google-signin-client_id" content="463745004028-nlij9588c7nm644cefk7visnss20m6h3.apps.googleusercontent.com">
+        
+    <link href="~/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/MyCSS/custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/MyCSS/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="/MyCSS/style.css"> <!-- Resource style -->
+     <link href="~/MyCSS/toaster.css" rel="stylesheet" />
+        <script src="~/MyScripts/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/toaster.js"></script>
+    <script src="~/MyScripts/bootstrap.min.js"></script>
+    <script src="~/MyScripts/modernizr.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>    
+    <script src="~/MyScripts/after_login.js"></script>
+    <script src="~/MyScripts/main.js"></script>
+
+
+    <style>
+        .body-left-column-menu-option li a {
+            color: #c3c1c1;
+        }
+
+            .body-left-column-menu-option li a,
+            .body-left-column-menu-option li a:link,
+            .body-left-column-menu-option li a:visited {
+                text-decoration: none;
+            }
+
+                .body-left-column-menu-option li a:hover {
+                    color: #16a085;
+                }
+    </style>
+</head>
+
+<body>
+
+   <!--Top menu bar-->
+    <div class="main-header">
+        <div class="site-name">
+            <span class="site-name-font">
+                <img src="~/images/AndhimaLogo.png" />
+            </span>
+        </div>
+
+        <div class="search-bar">
+            <form method="get" action="/search" id="search">
+                <input name="q" type="text" size="40" placeholder="Search..." />
+            </form>
+        </div>
+
+        <div class="user-details">
+            <p id="user-name" style="font-family:'Open Sans';font-size:13px;"></p>
+            <div class="dropdownButton">
+                <button style="background:none;border:none;outline:none;">
+                    <img src="../img/user.png" id="user-image">
+                    <div id="myDropdown" class="dropdown-content" style="z-index:1000 !important;font-family:'Open Sans'; font-size:.8em;">
+                       
+                        <a href="/Profile/Index">Edit Profile</a>
+                        <a href="#" class="logout">Logout</a>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+    </div>
+   
+     <div class="container-fluid" style="float: left">
+        <div class="row">
+        <!--Left pane for menus-->
+        <div class=" col-md-2" style="margin-top: -20px;">
+            <ul class="body-left-column-menu-option">
+                <li><a href="/Registered/Index">Announcement</a></li>
+                <li><a href="/Registered/LendAHand">Lend A Hand</a></li>
+                <li><a href="/TimeLine/Index">TimeLine</a></li>
+            </ul>
+        </div>
+
+        <!--To show list of announcements-->
+        <div class="col-md-8 announcement_pane " style="margin-top: 0px; background-color:#f6f7f8;">
+            <div class="announcement-container"></div>
+        </div>
+
+       
+            
+            <!--Right pane for filtering options-->
+            <div class="col-md-2" style="margin-top: 20px;">
+                <ul class="right_pane">
+                    <div>
+                        <div>
+                            <input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" checked="checked" />
+                            <label for="checkboxG1" class="css-label">Shared</label>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" style="margin-top: 15px" />
+                            <label for="checkboxG2" class="css-label">My</label>
+                        </div>
+                    </div>
+         <hr class="hr_line">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <input type="date" placeholder="From" onclick="$(this).removeClass('placeholderclass')" class="dateclass form-control placeholderclass">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <input type="date" placeholder="To" onclick="$(this).removeClass('placeholderclass')" class="dateclass form-control  placeholderclass">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="hr_line">
+                    <!--Create announcement button-->
+                    <a href="#" class="btn new_ann" id="create-announcement-button" data-toggle="modal" data-target="#myModal" style="border-radius: 25px;">Create Announcement</a>
+            </div>
+        </div>
+    
+    
+   <!-- Create announcement modal dialog box-->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog custom-modal">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="" style="margin: 10px 0px -10px 20px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title heading-form" style="color: #16A085; font-size: 16px; font-family:'Open Sans';">Announcement</h5>
+                </div>
+                <div class="modal-body col-md-12" style="height: auto !important; margin-top: 10px;font-family:'Open Sans';font-size:14px;font-weight: 300;">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="Name">First Name *</label></div>
+                                <div class="col-md-8 ">
+                                    <input type="text" class="form-control fname">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="Name">Last Name</label></div>
+                                <div class="col-md-8 ">
+                                    <input type="text" class="form-control Lname ">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="Demise">Date of Demise *</label></div>
+                                <div class="col-md-8 ">
+                                    <input type="date" class="form-control date">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="gender">Gender *</label></div>
+                                <div class="col-md-8 ">
+
+                                    <select class="form-control gender">
+                                        <option selected="selected" value="" disabled>Select</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="Blocation">Base Location *</label></div>
+                                <div class="col-md-8 ">
+                                    <input type="text" class="form-control bloc">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="Elocation">Expired Location *</label></div>
+                                <div class="col-md-8 ">
+                                    <input type="text" class="form-control eloc">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="image">Image</label></div>
+                                <div class="col-md-8 ">
+                                    <input type='file' id="uploadPic">
+                                    <span id='val'></span>
+                                    <span id='button'>
+                                        <label class="browse-btn">Browse</label></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group msg">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="message">Message *</label></div>
+                                <div class="col-md-8 ">
+                                    <textarea class="form-control Amessage" rows="2" cols="20"> </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="Name">Announcement Type</label></div>
+                                <div class="col-md-8 " style="color:#888">
+                                    <input class="active" checked="checked" type="radio" name="group" value="public">
+                                    Public 
+                                <input type="radio" name="group" value="private">
+                                    Private
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="message">Fields or Groups</label></div>
+                                <div class="col-md-8 ">
+                                    <textarea class="form-control" rows="2" cols="20"> </textarea>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <h5 class="heading_form">Lend A Hand</h5>
+
+                        <hr class="">
+
+
+
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="pledge">Amount Pledged</label></div>
+                                <div class="col-md-8 ">
+                                    <input type="text" class="form-control LendAmt">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="">
+                                    End Date</div>
+                                <div class="col-md-8 ">
+                                    <input type="DATE" class="form-control EndDate">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <label for="message">Message</label></div>
+                                <div class="col-md-8 ">
+                                    <textarea class="form-control lmessage" rows="2" cols="20"> </textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="col-md-offset-6 col-md-3">
+                        <a type="submit" class="submit btn btn-block new_ann " style="border-radius: 25px;">Save Changes </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a type="submit" class="btn btn-block new_ann " style="border-radius: 25px;"  data-dismiss="modal" >Close </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

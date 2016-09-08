@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "ForgotPassword";
+}
+
+
+
+<style>
+
+
+    @font-face {
+        font-family: 'general-font';
+        font-style: normal;
+        font-weight: 400;
+        src: @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+    }
+
+    @font-face {
+        font-family: 'Header-font';
+        src: url(@import url(https://fonts.googleapis.com/css?family=Raleway:600);
+
+    }
+    body {
+        background-image:url('../images/ForgotPassword.png');
+        background-size:cover;
+        background-repeat:no-repeat;
+        width:100vw;
+        height:100vh;
+        overflow:hidden;
+    }
+    .signup
+{
+    background-color:rgba(0,0,0,0.15);
+    padding-top:25px;
+    }
+ .inputBoxes
+ {
+     width:100%;
+     height:50px;
+     margin-top:1px;
+     font-size:20px;
+     padding:15px;
+     font-weight:bold;
+     font-family:general-font;
+ }
+ button:focus
+ {
+     outline:none;
+ }
+.submitBtn1
+ {
+     margin-top:10px;
+     background-color:rgba(0,0,0,0.4);
+     width:49%;
+     margin-right:1%;
+     color:White;
+     border:none;
+     height:45px;
+     font-weight:bold;
+     font-size:14px;
+     font-family:Header-font;
+     float:left;
+ }
+ .submitBtn1:hover
+ {
+    opacity:0.4;
+ }
+.submitBtn1:active
+ {
+    opacity:1;
+ }
+</style>
+<div class="container-fluid">
+    <div class="row" style="width:100%; height:30vh;"></div>
+    <div class="row" style="width:100%; height:25vh;">
+        <div class="col-lg-5 col-sm-5" style="height:100%;"></div>
+        <div class="col-lg-3 col-sm-3 signup" style="height:100%;">
+            <input type="text" placeholder="Email" class="inputBoxes" id="email" name="email"/></br>
+            <button class="submitBtn1" id="btn1">Reset</button>
+            @using(Html.BeginForm("Login", "Home")) {
+            <button type="reset" class="submitBtn1" style="background-color:rgba(253, 0, 0,0.7)" id="reset">Cancel</button>
+            }
+            @*abc*@
+        </div>
+        <div class="col-lg-4 col-sm-4" style="height:100%;"></div>
+    </div>
+</div>
+<script src="~/MyScripts/Forgotpw.js"></script>

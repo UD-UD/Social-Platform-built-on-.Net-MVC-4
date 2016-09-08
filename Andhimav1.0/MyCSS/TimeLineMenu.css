@@ -1,0 +1,82 @@
+﻿@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Raleway:600);
+
+div.Menu {
+  width: 200px;
+  margin: 30px;
+}
+
+h2 {
+  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul.filter {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+ul.filter > li {
+  font: 300 14px;
+  font-family:'Open sans';
+  border-bottom: 1px solid #ccc;
+      padding: 5px 0px;
+}
+
+ul.filter > li:last-child {
+  border: none;
+}
+
+ul.filter > li a {
+  text-decoration: none;
+  color: #000;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 200px;
+}
+
+ul.filter > li a:hover {
+  font-size: 14px;
+  color:#16A085 !important;
+
+}
+
+ul.filter > li a:active {
+  font-size: 14px;
+  color:#888;
+
+}
+
+
+ul.filter > li a.all {
+  color: #ff00dc;
+}
+
+ul.filter > li a.anguish_event {
+  color: #5E6297;
+}
+
+ul.filter > li a.dismay_event {
+  color: #454545;
+}
+
+ul.filter > li a.grief_event {
+   color: #ffd800;
+}
+
+ul.filter > li a.shock_event {
+   color: #993366;
+}
+
+ul.filter > li a.sorrowful_event {
+  color: #996633;
+}

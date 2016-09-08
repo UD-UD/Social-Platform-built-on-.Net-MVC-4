@@ -1,0 +1,427 @@
+
+
+		@font-face 
+		{
+ 			 font-family: 'Header-font';
+  			src: url('../fonts/Alternate_Gothic_No.ttf');
+  		}
+
+  		@font-face 
+		{
+ 			 font-family: 'general-font';
+  			src: url('../fonts/AvenirLTStd-Book.otf');
+  		}
+
+		.main-header
+		{
+			background-color: #16a085;
+			width: 100%;
+			height: 65px;
+			/*display: inline-flex;*/
+
+			text-align:center;
+			
+		}
+
+		.site-name-font
+		{
+			font-family: Header-font;
+			font-size: 52px;
+			padding:6px 0px 15px 25px;
+			color: #ffffff;
+		}
+
+		.site-name
+		{
+			float: left;
+			padding-top: 5px;
+		}
+
+		body
+		{
+			margin: 0px;
+			background-color: #e2e2e2;
+		}
+
+
+
+		#search input[type="text"] 
+		{
+		    background: url(../img/magnifier-white.png) no-repeat 10px 6px #11866f;
+		    border: 0 none;
+		    font: bold 12px Arial,Helvetica,Sans-serif;
+		    color: #d7d7d7;
+		    width:300px;
+		    padding: 6px 15px 6px 35px;
+		    -webkit-border-radius: 20px;
+		    -moz-border-radius: 20px;
+		    border-radius: 20px;
+		    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); 
+		    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    -webkit-transition: all 0.7s ease 0s;
+		    -moz-transition: all 0.7s ease 0s;
+		    -o-transition: all 0.7s ease 0s;
+		    transition: all 0.7s ease 0s;
+    	}
+
+	#search input[type="text"]:focus
+	 	{
+		    background: url(../img/magnifier-grey.png) no-repeat 10px 6px #fcfcfc;
+		    color: #6a6f75;
+		    width: 350px;
+		    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    	}
+
+		.search-bar 
+		{	
+			/*margin-left: 27%;*/
+			/*width:85%;*/
+
+			text-align:left;
+		    
+		    margin:0 auto !important; 
+		   display:inline-block;
+		    
+		}
+
+		.search-bar form
+		{
+			padding-top: 20px;
+
+		}
+
+		.user-details
+		{
+			display: inline-flex;
+			/*margin-left: 24%;*/
+			padding-top: 8px;
+			font-family: general-font;
+			color: #ffffff;
+
+			float: right;
+		}
+
+		#user-image
+		{
+			border-radius: 50%;
+			height: 50px;
+			width: 50px;
+			margin-right: 20px;
+		}
+
+		.user-details p,img
+		{
+			/*float:right;*/
+		}
+
+		#user-name
+		{
+			padding-right: 5px;
+			padding-top: 20px;
+		}
+
+
+		.panel
+		 {
+		    position: fixed;
+		    left: -15.625em; /*left or right and the width of your navigation panel*/
+		    width: 15.625em; /*should match the above value*/
+		}
+
+
+	.PersonDetails
+	{
+		height: 175px;
+		display: inline-flex;
+		font-family: general-font;
+		margin-left: 80px;
+		margin-top: 30px;
+
+
+	}
+
+	.Person-name-image ,.Person-birth-death
+	{
+		background-color: #ffffff;
+		width: 550px;
+
+		margin-right: 10px;
+		color: #c3c1c1;
+	}
+
+	.Person-name-image img{
+		height: 130px;
+		width: 130px;
+		border-radius: 50%;
+		
+		border: 3px solid #e2e2e2;
+		margin: 20px;
+
+		vertical-align:middle;
+		float: left;
+	}
+
+	
+	.Person-name-image p
+	{
+			padding: 83px;
+		    font-size: x-large;
+	}
+
+	.Person-dob-dod
+	{
+		padding-left: 60px;
+	    font-size: 22;
+	    padding-top: 25px;
+	    color: #c3c1c1;
+
+	}
+
+	.Person-dob-dod p
+	{
+		padding-bottom:20px; 
+	}
+
+	.PersonCondolances
+	{
+		width: 1110px;
+		margin-left: 80px;
+		margin-top: 10px;
+		background-color: #ffffff;
+		height: 350px;
+		display: inline-flex;
+	}
+	#person-condolance-image
+	{
+		height: 320px;
+		width: 530px;
+		padding-top: 15px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 15px;
+	}
+	
+	.Condolance-message-box
+	{
+		padding-top: 15px;
+		font-size: 22px;
+		font-family: general-font;
+		color:#c3c1c1;
+		
+	}
+
+	.Condolance-message-text
+	{
+		min-height: 280px;
+		padding-right: 10px;
+	}
+
+	.Condolance-message-box p
+	{
+		line-height: auto;
+	}
+
+	/*#regret-smiley-icon
+	{
+		background: url(../img/regret.png) no-repeat;
+		height: 16px;
+		width: 16px;
+		padding-left:16px: 
+	}
+
+	#comment-box-icon
+	{
+		background: url(../img/speechbubble10.png) no-repeat;
+		height: 16px;
+		width: 16px;
+	}
+
+	#lend-a-hand-icon
+	{
+		background: url(../img/hand.png) no-repeat;
+		height: 16px;
+		width: 16px;
+	}
+
+	#share-icon
+	{
+		background: url(../img/share.png) no-repeat;
+		height: 16px;
+		width: 16px;
+	}*/
+
+
+	#iconsss 
+	{
+		padding:0;
+		list-style: none; 
+		width:80%; 
+		margin:0 auto;
+	}
+
+	#iconsss  li 
+	{
+		float:left;  
+		width:25%;
+		text-align: center; 
+	}
+
+	#iconsss  li img 
+	{
+		width: 32px;
+		height: 32px;
+		/*padding-top: 15px;*/
+		/*display:block; */
+		padding-right: 5px;
+		margin:0 auto;
+	}
+	.comment-box
+	{
+		
+		background-color: #ffffff;
+		
+		display: none;
+		margin-top: 10px;
+		margin-left: 80px;
+		max-width: 1100px;
+		padding-top: 20px;
+		font-size: 16px;
+		font-family: general-font;
+		padding-right: 10px;
+
+	}
+
+	.comment-box :hover
+	{
+		display: block;
+	}
+
+	.lend-a-hand-container
+	{
+		min-width: 1110px;
+		max-width: 1110px;
+		background-color: #ffffff;
+		margin-top: 10px;
+		margin-left: 80px;
+		font-size: 16px;
+		font-family: general-font;
+		color: #c3c1c1;
+		height: 800px;
+		display: none;
+	}
+	
+	.row1
+	{
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+		padding-top: 15px;
+		padding-left: 50px;
+		padding-bottom: 20px;
+
+
+	}
+	#PledgeAmt
+	{
+		float: left;
+	}
+	#Endate
+	{
+		float: right;
+		margin-right: 110px;
+	}
+	.row2,.row3,.row4
+	{
+		 padding-left: 50px;
+	  padding-right: 50px;
+	  padding-bottom: 20px;
+	  text-align: center;
+	}
+
+	.progress
+	 {
+	  width: 100%;
+	  height: 15px;
+	}
+
+	.progress-wrap 
+	{
+	  background: #3dce6a;
+	  
+	  overflow: hidden;
+	  position: relative;
+
+
+	}
+	  
+	  .progress-bar 
+	  {
+	    background: #ddd;
+	    left: 0;
+	    position: absolute;
+    	top: 0;
+  	}
+#progress-percentage
+{
+	padding-top: 5px;
+}
+
+.row5
+{
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 20px;
+	padding-top: 100px !important;
+	display: none;
+}
+
+
+
+	#iconssss
+	{
+		padding:0;
+		list-style: none; 
+		width:100%; 
+		margin:0 auto;
+	}
+
+	#iconssss  li 
+	{
+		float:left;  
+		width:20%;
+		text-align: center; 
+		border-radius: 5px;
+		
+		
+	}
+
+	#iconssss  li p
+	{
+		background-color: #e6e3e3;
+		margin: 20px;
+		padding: 20px;
+
+	}
+
+
+		#iconssss  li p:hover
+		{
+			background-color: #3dce6a;
+			color: #ffffff;
+		}
+
+		#Donate p
+		{
+			background-color: #627aad !important;
+		}
+
+		#Donate p:hover
+		{
+			background-color: #627aad !important;
+		}
+	

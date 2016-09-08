@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="andhimaModelStoreContainer" CdmEntityContainer="andhimaEntities">
+    <FunctionImportMapping FunctionImportName="AddUserAccount" FunctionName="andhimaModel.Store.AddUserAccount" />
+    <FunctionImportMapping FunctionImportName="LoginValidate" FunctionName="andhimaModel.Store.LoginValidate" />
+    <FunctionImportMapping FunctionImportName="USP_GetAllComments" FunctionName="andhimaModel.Store.USP_GetAllComments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_GetAllComments_Result">
+          <ScalarProperty Name="CommentsID" ColumnName="CommentsID" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+          <ScalarProperty Name="CommentsText" ColumnName="CommentsText" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UpVoteCount" ColumnName="UpVoteCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="deleteForgot" FunctionName="andhimaModel.Store.deleteForgot" />
+    <FunctionImportMapping FunctionImportName="insertForgotPw" FunctionName="andhimaModel.Store.insertForgotPw" />
+    <FunctionImportMapping FunctionImportName="resetpw" FunctionName="andhimaModel.Store.resetpw" />
+    <FunctionImportMapping FunctionImportName="checkResetCode" FunctionName="andhimaModel.Store.checkResetCode" />
+    <FunctionImportMapping FunctionImportName="getMailId" FunctionName="andhimaModel.Store.getMailId" />
+    <FunctionImportMapping FunctionImportName="USP_InsertComment" FunctionName="andhimaModel.Store.USP_InsertComment" />
+    <FunctionImportMapping FunctionImportName="USP_UpdateComment" FunctionName="andhimaModel.Store.USP_UpdateComment" />
+    <FunctionImportMapping FunctionImportName="USP_UpdateVote" FunctionName="andhimaModel.Store.USP_UpdateVote" />
+    <FunctionImportMapping FunctionImportName="USP_Fetch_Images" FunctionName="andhimaModel.Store.USP_Fetch_Images" />
+    <FunctionImportMapping FunctionImportName="getMailCount" FunctionName="andhimaModel.Store.getMailCount" />
+    <FunctionImportMapping FunctionImportName="USP_getFamilyTree" FunctionName="andhimaModel.Store.USP_getFamilyTree">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getFamilyTree_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="MemberFirstName" ColumnName="MemberFirstName" />
+          <ScalarProperty Name="MemberLastName" ColumnName="MemberLastName" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="UserUniqueIndex" ColumnName="UserUniqueIndex" />
+          <ScalarProperty Name="ParentChildLink" ColumnName="ParentChildLink" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CheckUserPresence" FunctionName="andhimaModel.Store.CheckUserPresence" />
+    <FunctionImportMapping FunctionImportName="getPersonalDetails" FunctionName="andhimaModel.Store.getPersonalDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.getPersonalDetails_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getUserID" FunctionName="andhimaModel.Store.getUserID" />
+    <FunctionImportMapping FunctionImportName="insertPersonal" FunctionName="andhimaModel.Store.insertPersonal" />
+    <FunctionImportMapping FunctionImportName="insertProfFB" FunctionName="andhimaModel.Store.insertProfFB" />
+    <FunctionImportMapping FunctionImportName="insertUserContact" FunctionName="andhimaModel.Store.insertUserContact" />
+    <FunctionImportMapping FunctionImportName="USP_FetchIndividualAnnouncement" FunctionName="andhimaModel.Store.USP_FetchIndividualAnnouncement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_FetchIndividualAnnouncement_Result">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getContactDetails" FunctionName="andhimaModel.Store.getContactDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.getContactDetails_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="RegionCode" ColumnName="RegionCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getAnnouncementDetails" FunctionName="andhimaModel.Store.USP_getAnnouncementDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getAnnouncementDetails_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getAnnouncementDetailsFilterGenNm" FunctionName="andhimaModel.Store.USP_getAnnouncementDetailsFilterGenNm">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getAnnouncementDetailsFilterGenNm_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getAnnouncementDetailsFilterGenNmDt" FunctionName="andhimaModel.Store.USP_getAnnouncementDetailsFilterGenNmDt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getAnnouncementDetailsFilterGenNmDt_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getAnnouncementDetailsFilterGenNmFDt" FunctionName="andhimaModel.Store.USP_getAnnouncementDetailsFilterGenNmFDt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getAnnouncementDetailsFilterGenNmFDt_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getAnnouncementDetailsFilterGenNmTDt" FunctionName="andhimaModel.Store.USP_getAnnouncementDetailsFilterGenNmTDt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getAnnouncementDetailsFilterGenNmTDt_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getDetailsBasedOnFilters" FunctionName="andhimaModel.Store.USP_getDetailsBasedOnFilters">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getDetailsBasedOnFilters_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getFemaleAnnouncementDetails" FunctionName="andhimaModel.Store.USP_getFemaleAnnouncementDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getFemaleAnnouncementDetails_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getFemaleAnnouncementDetailsFilterGenNm" FunctionName="andhimaModel.Store.USP_getFemaleAnnouncementDetailsFilterGenNm">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNm_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getFemaleAnnouncementDetailsFilterGenNmDt" FunctionName="andhimaModel.Store.USP_getFemaleAnnouncementDetailsFilterGenNmDt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNmDt_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getFemaleAnnouncementDetailsFilterGenNmFDt" FunctionName="andhimaModel.Store.USP_getFemaleAnnouncementDetailsFilterGenNmFDt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNmFDt_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getFemaleAnnouncementDetailsFilterGenNmTDt" FunctionName="andhimaModel.Store.USP_getFemaleAnnouncementDetailsFilterGenNmTDt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNmTDt_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getMaleAnnouncementDetails" FunctionName="andhimaModel.Store.USP_getMaleAnnouncementDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getMaleAnnouncementDetails_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getMaleAnnouncementDetailsFilterGenNm" FunctionName="andhimaModel.Store.USP_getMaleAnnouncementDetailsFilterGenNm">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNm_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getMaleAnnouncementDetailsFilterGenNmDt" FunctionName="andhimaModel.Store.USP_getMaleAnnouncementDetailsFilterGenNmDt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNmDt_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getMaleAnnouncementDetailsFilterGenNmFDt" FunctionName="andhimaModel.Store.USP_getMaleAnnouncementDetailsFilterGenNmFDt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNmFDt_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getMaleAnnouncementDetailsFilterGenNmTDt" FunctionName="andhimaModel.Store.USP_getMaleAnnouncementDetailsFilterGenNmTDt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNmTDt_Result">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_getUserAnouncement" FunctionName="andhimaModel.Store.USP_getUserAnouncement" />
+    <FunctionImportMapping FunctionImportName="updateProfile" FunctionName="andhimaModel.Store.updateProfile" />
+    <FunctionImportMapping FunctionImportName="updateprofilepic" FunctionName="andhimaModel.Store.updateprofilepic" />
+    <FunctionImportMapping FunctionImportName="Getname" FunctionName="andhimaModel.Store.Getname">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.Getname_Result">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_Add_Ann_Lend_Data" FunctionName="andhimaModel.Store.USP_Add_Ann_Lend_Data" />
+    <FunctionImportMapping FunctionImportName="USP_GetAnnouncementByUser" FunctionName="andhimaModel.Store.USP_GetAnnouncementByUser" />
+    <FunctionImportMapping FunctionImportName="USP_GetAllAnnouncement" FunctionName="andhimaModel.Store.USP_GetAllAnnouncement" />
+    <FunctionImportMapping FunctionImportName="USP_LAHDetails" FunctionName="andhimaModel.Store.USP_LAHDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_LAHDetails_Result">
+          <ScalarProperty Name="LAHID" ColumnName="LAHID" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="LAH_message" ColumnName="LAH_message" />
+          <ScalarProperty Name="amountPledge" ColumnName="amountPledge" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_Regreted" FunctionName="andhimaModel.Store.USP_Regreted" />
+    <EntitySetMapping Name="AddressTypeMasters">
+      <EntityTypeMapping TypeName="andhimaModel.AddressTypeMaster">
+        <MappingFragment StoreEntitySet="AddressTypeMaster">
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+          <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Announcements">
+      <EntityTypeMapping TypeName="andhimaModel.Announcement">
+        <MappingFragment StoreEntitySet="Announcements">
+          <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+          <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="ExpiredLocation" ColumnName="ExpiredLocation" />
+          <ScalarProperty Name="BaseLocation" ColumnName="BaseLocation" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="AnnouncementType" ColumnName="AnnouncementType" />
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FamilyTrees">
+      <EntityTypeMapping TypeName="andhimaModel.FamilyTree">
+        <MappingFragment StoreEntitySet="FamilyTree">
+          <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="MemberImage" ColumnName="MemberImage" />
+          <ScalarProperty Name="ParentChildLink" ColumnName="ParentChildLink" />
+          <ScalarProperty Name="UserUniqueIndex" ColumnName="UserUniqueIndex" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="MemberLastName" ColumnName="MemberLastName" />
+          <ScalarProperty Name="MemberFirstName" ColumnName="MemberFirstName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForgotPasswords">
+      <EntityTypeMapping TypeName="andhimaModel.ForgotPassword">
+        <MappingFragment StoreEntitySet="ForgotPassword">
+          <ScalarProperty Name="HashUserID" ColumnName="HashUserID" />
+          <ScalarProperty Name="HashMailID" ColumnName="HashMailID" />
+          <ScalarProperty Name="UserEmailID" ColumnName="UserEmailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LendAHands">
+      <EntityTypeMapping TypeName="andhimaModel.LendAHand">
+        <MappingFragment StoreEntitySet="LendAHand">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="AmountPledged" ColumnName="AmountPledged" />
+          <ScalarProperty Name="LendAHandText" ColumnName="LendAHandText" />
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="LendAHandID" ColumnName="LendAHandID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegionMasters">
+      <EntityTypeMapping TypeName="andhimaModel.RegionMaster">
+        <MappingFragment StoreEntitySet="RegionMaster">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TermsMasters">
+      <EntityTypeMapping TypeName="andhimaModel.TermsMaster">
+        <MappingFragment StoreEntitySet="TermsMaster">
+          <ScalarProperty Name="CreatedTimeStamp" ColumnName="CreatedTimeStamp" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TermText" ColumnName="TermText" />
+          <ScalarProperty Name="TermsID" ColumnName="TermsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Timelines">
+      <EntityTypeMapping TypeName="andhimaModel.Timeline">
+        <MappingFragment StoreEntitySet="Timeline">
+          <ScalarProperty Name="ToWhom" ColumnName="ToWhom" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="TimelineID" ColumnName="TimelineID" />
+          <ScalarProperty Name="CreationTimeStamp" ColumnName="CreationTimeStamp" />
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+          <ScalarProperty Name="PostImage" ColumnName="PostImage" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="PostType" ColumnName="PostType" />
+          <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccounts">
+      <EntityTypeMapping TypeName="andhimaModel.UserAccount">
+        <MappingFragment StoreEntitySet="UserAccount">
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="AgreedToTermsDate" ColumnName="AgreedToTermsDate" />
+          <ScalarProperty Name="TermsID" ColumnName="TermsID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="EmailVerified" ColumnName="EmailVerified" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserComments">
+      <EntityTypeMapping TypeName="andhimaModel.UserComment">
+        <MappingFragment StoreEntitySet="UserComments">
+          <ScalarProperty Name="UpVoteCount" ColumnName="UpVoteCount" />
+          <ScalarProperty Name="ModerationPending" ColumnName="ModerationPending" />
+          <ScalarProperty Name="CreatedByCurrentUser" ColumnName="CreatedByCurrentUser" />
+          <ScalarProperty Name="CreatedByAdmin" ColumnName="CreatedByAdmin" />
+          <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CommentsText" ColumnName="CommentsText" />
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CommentsID" ColumnName="CommentsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnnoucementUserMappings">
+      <EntityTypeMapping TypeName="andhimaModel.AnnoucementUserMapping">
+        <MappingFragment StoreEntitySet="AnnoucementUserMapping">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContributionDetails">
+      <EntityTypeMapping TypeName="andhimaModel.ContributionDetail">
+        <MappingFragment StoreEntitySet="ContributionDetails">
+          <ScalarProperty Name="ContributedDateTime" ColumnName="ContributedDateTime" />
+          <ScalarProperty Name="AmountContributed" ColumnName="AmountContributed" />
+          <ScalarProperty Name="ContributorID" ColumnName="ContributorID" />
+          <ScalarProperty Name="LendAHandID" ColumnName="LendAHandID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nominees">
+      <EntityTypeMapping TypeName="andhimaModel.Nominee">
+        <MappingFragment StoreEntitySet="Nominees">
+          <ScalarProperty Name="Registered" ColumnName="Registered" />
+          <ScalarProperty Name="NomineeOrder" ColumnName="NomineeOrder" />
+          <ScalarProperty Name="NomineeID" ColumnName="NomineeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserContactDetails">
+      <EntityTypeMapping TypeName="andhimaModel.UserContactDetail">
+        <MappingFragment StoreEntitySet="UserContactDetails">
+          <ScalarProperty Name="RegionCode" ColumnName="RegionCode" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPersonalDetails">
+      <EntityTypeMapping TypeName="andhimaModel.UserPersonalDetail">
+        <MappingFragment StoreEntitySet="UserPersonalDetails">
+          <ScalarProperty Name="ProfileImageURL" ColumnName="ProfileImageURL" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CommentsUpVotedUsers" TypeName="andhimaModel.CommentsUpVotedUsers" StoreEntitySet="CommentsUpVotedUsers">
+      <EndProperty Name="UserAccount">
+        <ScalarProperty Name="UserID" ColumnName="UpVotedUserID" />
+      </EndProperty>
+      <EndProperty Name="UserComment">
+        <ScalarProperty Name="CommentsID" ColumnName="CommentsID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RegretedUsers" TypeName="andhimaModel.RegretedUsers" StoreEntitySet="RegretedUsers">
+      <EndProperty Name="UserAccount">
+        <ScalarProperty Name="UserID" ColumnName="UserID" />
+      </EndProperty>
+      <EndProperty Name="Announcement">
+        <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="USP_Add_Ann_Lend_Data_OTHER" FunctionName="andhimaModel.Store.USP_Add_Ann_Lend_Data_OTHER" />
+    <FunctionImportMapping FunctionImportName="USP_GetAnnouncementID" FunctionName="andhimaModel.Store.USP_GetAnnouncementID" />
+    <FunctionImportMapping FunctionImportName="USP_getTimeline" FunctionName="andhimaModel.Store.USP_getTimeline">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="andhimaModel.USP_getTimeline_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+          <ScalarProperty Name="PostType" ColumnName="PostType" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="PostImage" ColumnName="PostImage" />
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+          <ScalarProperty Name="CreationTimeStamp" ColumnName="CreationTimeStamp" />
+          <ScalarProperty Name="TimelineID" ColumnName="TimelineID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ToWhom" ColumnName="ToWhom" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_insertEvent" FunctionName="andhimaModel.Store.USP_insertEvent" />
+    <FunctionImportMapping FunctionImportName="USP_GetAllLAH" FunctionName="andhimaModel.Store.USP_GetAllLAH" />
+    <FunctionImportMapping FunctionImportName="USP_getUserLAH" FunctionName="andhimaModel.Store.USP_getUserLAH" />
+  </EntityContainerMapping>
+</Mapping>

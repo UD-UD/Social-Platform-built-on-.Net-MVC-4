@@ -1,0 +1,184 @@
+﻿@{
+    ViewBag.Title = "Andhima";
+}
+<script src="~/MyScripts/index.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/MyScripts/smoothPageScroll.js"></script>
+<script src="~/MyScripts/TweenMax.min.js"></script>
+<script src="~/MyScripts/parallax-plugin.min.js"></script>
+<script src="~/MyScripts/ScrollToPlugin.min.js"></script>
+<link href="~/CSS/animate.min.css" rel="stylesheet" />
+<link href="~/CSS/index.css" rel="stylesheet" />
+<link href="~/CSS/quotes.css" rel="stylesheet" />
+
+<div class="wrapper">
+<div class="vNav">
+       <ul class="vNav">
+            <li>
+                <a href="#slide1" class="active">
+                    <div class="label ">Sign Up</div>
+                </a>
+            </li>
+            <li>
+                <a href="#slide2">
+                    <div class="label">Andhima</div>
+                </a>
+            </li>
+            <li>
+                <a href="#slide3">
+                    <div class="label">Share</div>
+                </a>
+            </li>
+            <li>
+                <a href="#slide4">
+                    <div class="label">Lend a Hand</div>
+                </a>
+            </li>
+	<li>
+                <a href="#slide5">
+                    <div class="label">Footprint</div>
+                </a>
+            </li>
+     </ul>
+    </div>
+
+ <section id="slide1" class="par">
+ <div class="container-fluid">
+ <div class="row" style="width:100%; height:25vh;">
+     @using(Html.BeginForm("Login", "Home")) {
+    <button class="signin">Sign In</button>
+ }
+ 
+ </div>
+ <div class="row" style="width:100%; height:40vh;">
+   <div class="col-lg-3 col-sm-3 signup" style="float:right;height:100%;margin-right:10vw;">
+   <input type="email" placeholder="email" class="inputBoxes" id="email" /><br />
+   <input type="password" placeholder="password" class="inputBoxes" id="password"/><br />
+   <input type="text" placeholder="user name" class="inputBoxes" id="username"/>
+   <button id="submitBtn">Sign Up</button> 
+       <span class="" ><p style="text-align:center;font-family:'Open sans'; margin-top:10px; color:#fff" >[ Or ]</p> </span>
+   <div class="inputdata" style="margin-top:10px;">
+       
+
+
+     <button id="fb"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-size="xlarge" style="float:left;opacity:0">
+</fb:login-button></button>
+     <button id="gp">
+         <div id="gConnect" style="margin-left:0%;opacity:0">
+    <div id="signin-button"></div>
+  </div>
+       </button>
+     
+    
+   </div>
+   </div>
+
+ </div>
+ </div>
+</section>
+
+ <section id="slide2" class="par">
+ <div class="container-fluid"></div>
+     <div class="row">
+         <button class="signin register">Sign Up</button>
+
+         @using (Html.BeginForm("Login", "Home"))
+         {
+             <button class="signin" style="margin-right:2vw !important">Sign In</button>
+         }
+     </div>
+</section>
+
+ <section id="slide3" class="par">
+ <div class="container-fluid">
+ <div class="row" style="width:100%; height:30vh;">
+ <button class="signin register">Sign up</button>
+  @using(Html.BeginForm("Login", "Home")) {
+    <button class="signin" style="margin-right:2vw !important;">Sign In</button>
+ }
+ 
+ </div>
+  <div class="row responsive"  ng-app="myApp" ng-controller="personsCtrl">
+       <section class="col-sm-1"></section>
+            <section class="col-md-offset-1 col-sm-3 homepage_ann_box" ng-repeat="x in persons" >
+                <div>
+                    <div>
+                        <div class="anoouncement-header-title">
+                            <img src="~/images/Icons/avatar83.png" width="15" height="15" style="background-color: #CFCDCD" ; margin-top 12px; />
+                            <label class="condolence_head_nme">Condolence</label>
+                        </div>
+                        <hr />
+                        <img src="{{x.src}}" style="width:100px; height:100px;margin-left: 25%;"> <a href="~/UnRegistered/IndividualAnnouncement">...</a>
+                        <br />
+
+                        <hr />
+                        <div class="announcement-foot">
+                            <a><label id="labelRegretCount" style="font-family: Open Sans">{{x.regretCount}} regrets</label></a>
+                            &nbsp;&nbsp;&nbsp
+                            <img src="~/images/Icons/share41.png" class="opacity_img" alt="Shares" width="20" height="20" ng-click="clickRegister in()">
+                            &nbsp;&nbsp;&nbsp;
+                            <img src="~/images/Icons/speech bubble10.png" class="opacity_img" alt="Condolences" width="20" height="20" ng-click="clickRegisterSignin()">
+                            &nbsp;&nbsp;&nbsp;
+                            <img src="~/images/Icons/hand-1.png" class="opacity_img" alt="Condolences" width="20" height="20" ng-click="clickRegisterSignin()">
+                        </div>
+                    </div>
+                </div>
+            </section>
+ 
+      @using (Html.BeginForm("Index", "UnRegistered"))
+                        {
+                             <button class="btn btn-primary see_mre">See More...</button>
+                        
+                         }
+   </div>
+   </div>
+</section>
+
+ <section id="slide4" class="par">
+ <div class="container-fluid">
+ <div class="row">
+ <button class="signin register">Sign Up</button>
+     
+      @using(Html.BeginForm("Login", "Home")) {
+    <button class="signin" style="margin-right:2vw !important">Sign In</button>
+ }
+ </div>
+ <div class="row" style="width:100%; height:30vh;">
+ <div class="quotation col-lg-4" style="float:right;height:auto;margin-top:15vh;margin-right:10vw; padding:0px;">
+ <div class="quotation1"></div>
+   <div class="slidingVertical quotes">
+ <span>We can't help everyone, but everyone can help someone.<br /><font style="float:right;">-<Quoter>Ronald Reagan</Quoter></font></span>
+ <span>I believe the world is one big family, and we need to help each other.<br /><font style="float:right;">-<Quoter>Jet Li</Quoter></font></span>
+ <span>A hero is somebody who is selfless, who is generous in spirit, who just tries to give back as much as possible and help people. A hero to me is someone who saves people and who really deeply cares.<br /><font style="float:right;">-<Quoter>Debi Mazar</Quoter></font></span>
+</div>
+ </div>
+ </div>
+ <div class="userimage" style="width:100vw; height:35vh;display:none;margin-top:15vh;">
+ <a href="#"> @using(Html.BeginForm("LendAHand", "Home")) {<button class="image"></button>}</a>
+  <a href="#"><button class="image"></button></a>
+   <a href="#"><button class="image"></button></a>
+ </div>
+ </div>
+</section>
+
+ <section id="slide5" class="par">
+ <div class="container-fluid">
+     <div class="row">
+         <button class="signin register">Sign Up</button>
+
+         @using (Html.BeginForm("Login", "Home"))
+         {
+             <button class="signin" style="margin-right:2vw !important">Sign In</button>
+         }
+     </div>
+ <div class="quotation col-lg-4" style="float:right; height:auto;margin-top:40vh;margin-right:6vw; padding:0px;">
+  <div class="quotation1"></div>
+   <div class="slidingVertical quotes">
+ <span>Every man must do two things alone; he must do his own believing and his own dying.<br /><font style="float:right;">-<Quoter>Martin Luther</Quoter></font></span>
+ <span>When a great man dies, for years the light he leaves behind him, lies on the paths of men.<br /><font style="float:right;">-<Quoter>Henry Wadsworth Longfellow</Quoter></font></span>
+ <span>For the sword outwears its sheath, and the soul wears out the breast. And the heart must pause to breathe, and love itself have rest.<br /><font style="float:right;">-<Quoter>Lord Byron</Quoter></font></span>
+</div>
+ </div></div>
+</section>
+</div>
+<script src="~/MyScripts/IndexAnnounce.js"></script>

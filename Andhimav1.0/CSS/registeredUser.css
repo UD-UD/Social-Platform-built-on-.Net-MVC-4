@@ -1,0 +1,193 @@
+
+
+		
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Raleway:600);
+
+
+		.main-header
+		{
+			background-color: #16a085;
+			width: 100%;
+			height: 65px;
+			/*display: inline-flex;*/
+
+			text-align:center;
+			
+		}
+
+		.site-name-font
+		{
+			font-family: Header-font;
+			font-size: 52px;
+			padding:6px 0px 15px 25px;
+			color: #ffffff;
+		}
+
+		.site-name
+		{
+			float: left;
+			padding-top: 5px;
+		}
+
+		body
+		{
+			margin: 0px;
+		}
+
+
+
+		#search input[type="text"] 
+		{
+		    background: url(../img/magnifier-white.png) no-repeat 10px 6px #11866f;
+		    border: 0 none;
+		    font: bold 12px Arial,Helvetica,Sans-serif;
+		    color: #d7d7d7;
+		    width:300px;
+		    padding: 13px 15px 6px 35px;
+		   
+    	}
+
+	#search input[type="text"]:focus
+	 	{
+		    background: url(../img/magnifier-grey.png) no-repeat 10px 6px #fcfcfc;
+		    color: #6a6f75;
+		    width: 350px;
+		    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    	}
+
+		.search-bar 
+		{	
+			/*margin-left: 27%;*/
+			/*width:85%;*/
+
+			text-align:left;
+		    
+		    margin:0 auto !important; 
+		   display:inline-block;
+		    
+		}
+
+		.search-bar form
+		{
+			padding-top: 20px;
+
+		}
+
+		.user-details
+		{
+			display: inline-flex;
+			/*margin-left: 24%;*/
+			padding-top: 8px;
+			font-family: general-font;
+			color: #ffffff;
+
+			float: right;
+		}
+
+		#user-image
+		{
+			border-radius: 50%;
+			height: 50px;
+			width: 50px;
+			margin-right: 20px;
+		}
+
+		.user-details p,img
+		{
+			/*float:right;*/
+		}
+
+		#user-name
+		{
+			padding-right: 5px;
+			padding-top: 20px;
+		}
+
+
+		.panel
+		 {
+		    position: fixed;
+		    left: -15.625em; /*left or right and the width of your navigation panel*/
+		    width: 15.625em; /*should match the above value*/
+		}
+
+
+		/*---------Check Box--------------*/
+input[type=checkbox].css-checkbox {
+              position:absolute;
+               z-index:-1000;
+                left:-1000px; 
+                overflow: hidden; 
+                clip: rect(0 0 0 0); 
+                height:1px; 
+                width:1px; 
+                margin:-1px; 
+                padding:0; 
+                border:0;
+            }
+
+            input[type=checkbox].css-checkbox + label.css-label {
+              padding-left:28px;
+              height:20px; 
+              display:inline-block;
+              line-height:20px;
+              background-repeat:no-repeat;
+              background-position: 0 0;
+              
+              vertical-align:middle;
+              cursor:pointer;
+
+            }
+
+            input[type=checkbox].css-checkbox:checked + label.css-label {
+              background-position: 0 -20px;
+            }
+            label.css-label
+             {
+			        background-image:url(../img/csscheck.png);
+			        -webkit-touch-callout: none;
+			        -webkit-user-select: none;
+			        -khtml-user-select: none;
+			        -moz-user-select: none;
+			        -ms-user-select: none;
+			        user-select: none;
+      }
+
+      .announcement-filter td
+      {
+      		padding-right: 10px;
+      		padding-left: 64px;
+      }
+
+      .date-holder
+      {
+      	padding-left: 185px;
+      }
+
+
+	.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  background: #16a085;
+  padding: 6px 20px 7px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+	

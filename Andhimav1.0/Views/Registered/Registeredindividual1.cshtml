@@ -1,0 +1,214 @@
+﻿<html>
+<head>
+    <title>Andhima</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="~/CSS/jquery-ui.min.css">
+    <link href="~/MyCSS/registeredUser.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/MyCSS/registeredUserIndividualAnn.css">
+    <link rel="stylesheet" href="/MyCSS/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="/MyCSS/jquery-comments.css" type="text/css">
+    <link rel="stylesheet" href="~/CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="~/CSS/custom.css">
+    <link rel="stylesheet" href="~/CSS/component.css" />
+
+
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/MyScripts/jquery-2.1.1.js"></script>
+    <script src="~/MyScripts/after_login.js"></script>
+    <script src="~/Scripts//custom.js"></script>
+    <script src="~/Scripts//bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="~/MyScripts/jquery-comments.min.js"></script>
+    <script src="~/Scripts/modernizr.custom.js"></script>
+</head>
+
+
+
+<body>
+
+    <div class="main-header">
+        <div class="site-name">
+            <span class="site-name-font"> 
+                    <img src="~/images/AndhimaLogo.png" />
+            </span>
+        </div>
+        <div class="search-bar">
+            <form method="get" action="/search" id="search">
+                <input name="q" type="text" size="40" placeholder="Search..." />
+            </form>
+        </div>
+
+        <div class="user-details">
+            <p id="user-name" style="font-family:'Open Sans';font-size:13px;"></p>
+            <div class="dropdownButton">
+                <button style="background:none;border:none;outline:none;">
+                    <img src="../img/user.png" id="user-image">
+                    
+                    <div id="myDropdown" class="dropdown-content" style="z-index:1000 !important;font-family:'Open Sans'; font-size:.8em;">
+
+                        <a href="/Profile/Index">Edit Profile</a>
+                        <a href="#" class="logout">Logout</a>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="float:left">
+        <div class="row">
+            <!-- left pane -->
+            <div class="col-md-2">
+                <ul class="body-left-column-menu-option " style="cursor:pointer;">
+                    <li><a href="/Registered/Index">Announcement</a></li>
+                    <li><a href="/Registered/LendAHand">Lend A Hand</a></li>
+                    <li><a href="/TimeLine/Index">TimeLine</a></li>
+                </ul>
+            </div>
+
+            <!-- Center pane -->
+            <div class="col-md-8 announcement_pane" style="margin-top: 0px;">
+                <div class="col-md-12">
+                    <h3 class="heading_form"> <p id="Person-Name"></p> </h3>
+                    <hr class="hr_line">
+                    <div class=" col-md-8 ">
+                        <img class="img-responsive individual_ann_img" id="person-condolance-image" src="../img/message.jpg">
+                    </div>
+                </div>
+
+                <div class=" col-md-12 ">
+                    <hr class="hr_line">
+                    <div class="col-md-6 dimense_date">
+                        <ul class="ind_dob">
+                            <p id="Person-DOB"> Date of Birth: <span></span> </p>
+                            <p id="Person-DOD"> Date of Demise: <span></span>  </p>
+                        </ul>
+                    </div>
+                    <div class="col-md-offset-2 col-md-4 dimense_shared">
+                        <ul class="ind_dob">
+
+                            <li> <p id="Person-Shared">Shared By:<span></span></p> </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 ">
+                    <hr class="hr_line">
+                    <p class="dimense_content" id="Message-ann-text"></p>
+                    <hr class="hr_line">
+                </div>
+
+                <div class="col-md-12">
+                    <ul class=" ann_footr_icons">
+                        <li id="regret-smiley-icon">   Regrets <span></span> </li>
+                        <li id="share-icon">     <img class="" id="share-icon" src="~/images/share1.png"> <span> </span> </li>
+                        <li id="comment-box-icon">  <img class="" src="~/images/comments.png"> <span> </span> </li>
+                        <li id="lend-a-hand-icon" style="padding-right:10px !important">    <img class="" src="~/images/contribute.png"> <span> </span> </li>
+                    </ul>
+                </div>
+
+
+                <!--  Comments share container-->
+                <div id="comments-container" class="comment-box">
+                </div>
+
+                <div class="lend-a-hand-popup">
+                    <p></p>
+                </div>
+                <div class="lend-a-hand-container">
+
+                    <div class="row1">
+                        <p id="PledgeAmt"></p>
+                        <p id="Endate"></p>
+                    </div>
+
+                    <div class="row2">
+                        <div id="progressbar"><div class="progress-label">Loading...</div></div>
+                    </div>
+
+                    <div class="row3">
+                        <ul id="donate-amt-ul" class="input-list style-1 clearfix">
+                            <li>
+                                <input id="donate-amt" type="text" placeholder="Enter Your Amount">
+                            </li>
+                        </ul>
+                        <span id="Donate" class="donate-final">Donate</span>
+                    </div>
+
+                    <div class="row4">
+                        @*<img  src="../img/down.png" style="float:right;height:20px;width:20px;">*@
+                        <div class="down" id="More-LAH"></div>
+                    </div>
+
+                    <div class="row5">
+
+                        <p style="font-size: 14px; padding-bottom: 12px">Note</p>
+                        <p id="lend-a-hand-message">
+                        </p>
+
+                        <h3 style="font-size: 14px; padding-bottom: 12px; padding-top:40px">Helping Hands</h3>
+
+                        <ul id="iconsss">
+                            <li id="regret-smiley-icon"><img src="../img/user.png" class="icon" alt="telephone icon" style="height:100px;width:100px;" /><span>Mr.Ram</span><span>150</span></li>
+
+                            <li id="comment-box-icon"><img src="../img/user.png" class="icon" alt="Mobile icon" style="height:100px;width:100px;" /><span>Mr.Ram</span><span>150</span></li>
+
+                            <li id="lend-a-hand-icon"><img src="../img/user.png" class="icon" alt="Email icon" style="height:100px;width:100px;" /><span>Mr.Ram</span><span>150</span></li>
+
+                            <li id="share-icon"><img src="../img/user.png" class="icon" alt="Location icon" style="height:100px;width:100px;" /><span>Mr.Ram</span><span>150</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Right Pane - -->
+            <div class="col-md-2">
+              <!--  <ul class="right_pane">
+                    <li> <a href="#">  <input type="checkbox" value="">          Shared[10]   </a> </li>
+                    <li> <a href="#"> <input type="checkbox" value="">  My [1]</a>  </li>
+                    <hr class="hr_line">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <input type="date" placeholder="From" onClick="$(this).removeClass('placeholderclass')" class="dateclass form-control placeholderclass">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <input type="date" placeholder="To" onClick="$(this).removeClass('placeholderclass')" class="dateclass form-control  placeholderclass">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="hr_line">
+                    <a href="#" class="btn new_ann" id="create-announcement-button" data-toggle="modal" data-target="#myModal" style="border-radius:25px;">Create Announcement</a>
+                </ul> -->
+            </div>
+
+        </div>
+    </div>
+    <script src="~/Scripts/masonry.pkgd.min.js"></script>
+    <script src="~/Scripts/imagesloaded.js"></script>
+    <script src="~/Scripts/classie.js"></script>
+    <script src="~/Scripts/AnimOnScroll.js"></script>
+
+    <script>
+        // image loaded in shared announce //
+        new AnimOnScroll(document.getElementById('grid'), {
+            minDuration: 0.4,
+            maxDuration: 0.7,
+            viewportFactor: 0.2
+        });
+
+    </script>
+    <script src="~/MyScripts/RegisteredIndividualAnnouncement.js"></script>
+</body>
+
+</html>@*llkrgkreng.ernh*@
+

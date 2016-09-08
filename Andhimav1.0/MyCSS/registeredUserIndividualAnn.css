@@ -1,0 +1,548 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Raleway:600);
+
+		.main-header
+		{
+			background-color: #16a085;
+			width: 100%;
+			height: 65px;
+			/*display: inline-flex;*/
+
+			text-align:center;
+			
+		}
+
+		.site-name-font
+		{
+			font-family: Header-font;
+			font-size: 24px;
+			padding:13px 0px 15px 25px;
+			color: #ffffff;
+		}
+
+		.site-name
+		{
+			float: left;
+			padding-top: 5px;
+		}
+
+		body
+		{
+			margin: 0px;
+			background-color: #e2e2e2;
+            font-family:'Open Sans';
+            font-size:14px;
+		}
+
+
+
+		#search input[type="text"] 
+		{
+		    background: url(../img/magnifier-white.png) no-repeat 10px 6px #11866f;
+		    border: 0 none;
+		    font: bold 12px Arial,Helvetica,Sans-serif;
+		    color: #d7d7d7;
+		    width:300px;
+		    padding: 13px 15px 6px 35px;
+		    -webkit-border-radius: 20px;
+		    -moz-border-radius: 20px;
+		    border-radius: 20px;
+		    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); 
+		    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    -webkit-transition: all 0.7s ease 0s;
+		    -moz-transition: all 0.7s ease 0s;
+		    -o-transition: all 0.7s ease 0s;
+		    transition: all 0.7s ease 0s;
+    	}
+
+	#search input[type="text"]:focus
+	 	{
+		    background: url(../img/magnifier-grey.png) no-repeat 10px 6px #fcfcfc;
+		    color: #6a6f75;
+		    width: 350px;
+		    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    	}
+
+		.search-bar 
+		{	
+			/*margin-left: 27%;*/
+			/*width:85%;*/
+
+			text-align:left;
+		    
+		    margin:0 auto !important; 
+		   display:inline-block;
+		    
+		}
+
+		.search-bar form
+		{
+			padding-top: 20px;
+
+		}
+
+		.user-details
+		{
+			display: inline-flex;
+			/*margin-left: 24%;*/
+			padding-top: 8px;
+			font-family: 'Open Sans';
+			color: #ffffff;
+
+			float: right;
+		}
+
+		#user-image
+		{
+			border-radius: 50%;
+			height: 50px;
+			width: 50px;
+			margin-right: 10px;
+		}
+
+		.user-details p,img
+		{
+			/*float:right;*/
+		}
+
+		#user-name
+		{
+			padding-right: 5px;
+			padding-top: 20px;
+		}
+
+
+		.panel
+		 {
+		    position: fixed;
+		    left: -15.625em; /*left or right and the width of your navigation panel*/
+		    width: 15.625em; /*should match the above value*/
+		}
+
+
+	.PersonDetails
+	{
+		height: 50px;
+        display: inline-flex;
+        font-family: 'Open Sans';
+        margin-left: 20px;
+        margin-top: 20px;
+}
+
+	.Person-name-image ,.Person-birth-death
+	{
+		background-color: #ffffff;
+		width: 550px;
+
+		margin-right: 10px;
+		color: #c3c1c1;
+	}
+
+	.Person-name-image img{
+	height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 1px solid #e2e2e2;
+    margin: 0px;
+    vertical-align: middle;
+    float: left;
+	}
+
+	
+	.Person-name-image p
+	{
+			
+		    font-size: 15px;
+            margin-top: 20px;
+        margin-left: 13%;
+	}
+
+	.Person-dob-dod
+	{
+		font-size: 14px;
+	    color: #c3c1c1;
+        font-family:'Open sans';
+
+
+	}
+
+	.Person-dob-dod p
+	{
+		padding-bottom:10px; 
+	}
+
+	.PersonCondolances
+	{
+		width: 1110px;
+		margin-left: 20px;
+		margin-top: 20px;
+		background-color: #ffffff;
+		height: 350px;
+		display: inline-flex;
+	}
+	#person-condolance-image
+	{
+		height: 300px;
+		width: 530px;
+		padding-top: 15px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 15px;
+	}
+	
+	.Condolance-message-box
+	{
+		padding-top: 15px;
+		font-size: 14px;
+		font-family:'Open Sans';
+		color:#c3c1c1;
+		
+	}
+
+	.Condolance-message-text
+	{
+		min-height: 291px;
+		padding-right: 10px;
+	}
+
+	.Condolance-message-box p
+	{
+		line-height: auto;
+	}
+    .ann_footr_icons {
+        list-style-type: none; 
+         display: inline-flex;
+         margin-left:48%;
+    }
+      .ann_footr_icons li {
+          margin-left:70px !important;
+          margin-top:-10px;
+      }
+	/*#regret-smiley-icon
+	{
+		background: url(../img/regret.png) no-repeat;
+		height: 16px;
+		width: 16px;
+		padding-left:16px: 
+	}
+
+	#comment-box-icon
+	{
+		background: url(../img/speechbubble10.png) no-repeat;
+		height: 16px;
+		width: 16px;
+	}
+
+	#lend-a-hand-icon
+	{
+		background: url(../img/hand.png) no-repeat;
+		height: 16px;
+		width: 16px;
+	}
+
+	#share-icon
+	{
+		background: url(../img/share.png) no-repeat;
+		height: 16px;
+		width: 16px;
+	}*/
+
+
+	#iconsss 
+	{
+		    padding: 0;
+    list-style: none;
+    width: 350%;
+    margin: 0 auto;
+    overflow: hidden !important;
+    float: left;
+    margin-left: -556%;
+    margin-top: 187%;
+	}
+
+	#iconsss  li 
+	{
+		float:left;  
+		width:25%;
+		text-align: center; 
+	}
+
+	#iconsss  li img 
+	{
+		width: 32px;
+		height: 32px;
+		/*padding-top: 15px;*/
+		/*display:block; */
+		padding-right: 5px;
+		margin:0 auto;
+	}
+	.comment-box
+	{
+		
+		background-color: #ffffff;
+		
+		display: none;
+		margin-top: 10px;
+		margin-left: 80px;
+		max-width: 1100px;
+		padding-top: 20px;
+		font-size: 16px;
+		font-family: 'Open Sans';
+		padding-right: 10px;
+
+	}
+
+	.comment-box :hover
+	{
+		display: block;
+	}
+
+	.lend-a-hand-container
+	{
+		min-width: 800px;
+		max-width: 1110px;
+		background-color: #ffffff;
+		margin-top: 10px;
+		margin-left: 80px;
+        margin-bottom:100px;
+		font-size: 12px;
+		font-family: 'Open Sans';
+		color: #c3c1c1;
+		/*height: 800px;*/
+		display: none;
+	}
+	
+	.row1
+	{
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+		padding-top: 15px;
+		padding-left: 50px;
+		padding-bottom: 20px;
+
+
+	}
+	#PledgeAmt
+	{
+		float: left;
+	}
+	#Endate
+	{
+		float: right;
+		margin-right: 110px;
+	}
+	.row2,.row3,.row4
+	{
+		 padding-left: 50px;
+	  padding-right: 50px;
+	  padding-bottom: 20px;
+	  text-align: center;
+	}
+
+	.progress
+	 {
+	  width: 100%;
+	  height: 15px;
+	}
+
+	.progress-wrap 
+	{
+	  background: #3dce6a;
+	  
+	  overflow: hidden;
+	  position: relative;
+
+
+	}
+	  
+	  .progress-bar 
+	  {
+	    background: #ddd;
+	    left: 0;
+	    position: absolute;
+    	top: 0;
+  	}
+#progress-percentage
+{
+	padding-top: 5px;
+}
+
+.row5
+{
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 20px;
+	
+	display: none;
+}
+
+
+
+	#iconssss
+	{
+		padding:0;
+		list-style: none; 
+		width:100%; 
+		margin:0 auto;
+        overflow: hidden;
+	}
+
+	#iconssss  li 
+	{
+		float:left;  
+		width:20%;
+		text-align: center; 
+		border-radius: 5px;
+		
+		
+	}
+
+	#iconssss  li p
+	{
+		background-color: #e6e3e3;
+		margin: 20px;
+		padding: 20px;
+
+	}
+
+
+		#iconssss  li p:hover
+		{
+			background-color: #3dce6a;
+			color: #ffffff;
+		}
+
+        #donate-amt-ul
+        {
+            float:left;
+          
+        }
+
+		#Donate 
+		{
+			background-color: #627aad !important;
+            float:right;
+            margin-right:200px;
+            padding:5px;
+            margin-top: 0px;
+            padding-left: 50px;
+            padding-right: 50px;
+		}
+
+		#Donate:hover
+		{
+			background-color: #627aad !important;
+		}
+
+
+        /* Progress bar*/
+        .ui-progressbar
+         {
+            position: relative;
+        }
+
+        .progress-label
+         {
+            position: absolute;
+            left: 50%;
+            top: 4px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #fff;
+        }
+
+        .ui-progressbar .ui-progressbar-value
+        {
+            height:25px !important;
+        }
+
+        .ui-widget-header
+        {
+            background:#3dce6a !important;
+        }
+	#progressbar
+    {
+        height:25px !important;
+	}
+
+    .lend-a-hand-popup
+    {
+        height:500px;
+        width:500px;
+        display:none;
+        background:#fafafa;
+        z-index:999999;
+        position:absolute;
+        top:0px;
+        margin:28%;
+        font-family:general-font;
+    }
+    .row4
+    {
+        padding-top:40px;
+     padding-bottom:40px;
+    }
+
+#lend-a-hand-message {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+
+input[type="text"] {
+      display: block;
+    margin: 0;
+    width: 75%;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    padding: 10px ;
+    box-shadow: none;
+    border-radius: none;
+    margin-left: 44px;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+
+.style-1 input[type="text"] {
+  padding: 0px;
+  border: solid 1px #dcdcdc;
+
+}
+.style-1 input[type="text"]:focus,
+.style-1 input[type="text"].focus {
+  border: solid 1px #707070;
+
+}
+
+.down
+{
+    background-image:url('../img/down.png') ;
+    background-size:20px 20px;
+    float:right;
+    height:20px;
+    width:20px;
+}
+
+.up
+{
+    background-image:url('../img/upp-navigate3.png');
+    background-size:20px 20px;
+    float:right;
+    height:20px;
+    width:20px;
+}
+
+#user-home-button
+{
+    max-height: 50px;
+    max-width: 50px;
+    margin-right: 10px;
+}
+/*ksgkl*/

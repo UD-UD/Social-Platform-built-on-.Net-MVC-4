@@ -1,0 +1,156 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutUnReg.cshtml";
+    ViewBag.Title = "IndividualAnnouncement";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="~/Content/bootstrap-theme.min.css">
+
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+@*<script src="~/Scripts/angular.min.js"></script>*@
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<script src="~/Scripts/toaster.js"></script>
+<link href="~/MyCSS/toaster.css" rel="stylesheet" />
+
+@*<style>
+        img {
+            border: 5px solid #ccc;
+            float: left;
+            margin: 15px;
+            -webkit-transition: margin 0.5s ease-out;
+            -moz-transition: margin 0.5s ease-out;
+            -o-transition: margin 0.5s ease-out;
+        }
+
+            img:hover {
+                margin-top: 2px;
+            }
+    </style>*@
+<style>
+    .opacity_img {
+        opacity: 0.45;
+    }
+
+        .opacity_img:hover {
+            cursor: pointer;
+            opacity: 1.0;
+        }
+</style>
+@*<script>
+        $(".imgglow").hover(
+      function () {
+          Pixastic.process($(this).get(0), "glow", { amount: 0.5, radius: 1.0 });
+      },
+      function () {
+          Pixastic.revert($(this).get(0));
+      }
+    );
+    </script>*@
+
+<body background="~/images/bg2.gif" onload='getAnnouncementDetails();'>
+    <div class="container-fluid" id="divDiv" ng-app="myApp" ng-controller="personCtrl">
+        @*<br />
+            <br />
+            <div class="row">
+                <aside class="col-sm-1"></aside>
+                <section class="col-sm-5">
+                    <div style="border: 1px solid white ;width:460px;height:150px;background-color:white">
+                        <section class="col-sm-3">
+                            <img src={{person[0].src}} class="img-circle" alt="Photo" width="150" height="140">
+                        </section>
+                        <aside class="col-sm-2"></aside>
+                        <section class="col-sm-6">
+                            <div class="row" style="color:white">
+                                ********
+                            </div>
+                            <div class="row">
+                                <label id="lName">
+                                    {{person[0].name}}
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label id="lBirthDeath">
+                                    ({{person[0].birthyear}}-{{person[0].deathyear}})
+                                </label>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+                <section class="col-sm-5">
+                    <div style="border: 1px solid white ;width:450px;height:150px;background-color:white;text-align:center">
+                        <div class="row" style="color:white">
+                            ********
+                        </div>
+                        <div class="row">
+                            <label>Date of Birth</label>
+                            <label id="lBirth" style="font-weight:lighter">{{person[0].birthdate}}</label>
+                        </div>
+                        <div class="row">
+                            <label>Date of Demise</label>
+                            <label id="lDemise" style="font-weight:lighter">{{person[0].deathdate}}</label>
+                        </div>
+                        <div class="row">
+                            <label>Shared by</label>
+                            <label id="lSharedBy" style="font-weight:lighter">{{person[0].sharedBy}}</label>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <br />
+
+            <div class="row">
+                <aside class="col-sm-1"></aside>
+                <section class="col-sm-10">
+                    <div style="border: 1px solid white ;width:1030px;height:200px;background-color:white">
+                        <div class="col-sm-4">
+                            <img src="~/images/MyCondolences.png" alt="Image" width="450" height="190">
+                        </div>
+                        <aside class="col-sm-2"></aside>
+                        <section class="col-sm-6">
+                            <div class="row" style="color:white">
+                                ********
+                            </div>
+                            <div class="row">
+                                <label id="lDescription" style="font-weight:lighter">
+                                    {{person[0].description}}
+                                </label>
+                            </div>
+                            <div class="row" style="color:white">
+                                ********
+                            </div>
+                            <div class="row">
+                                <aside class="col-sm-1"></aside>
+                                <section class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        <img src="~/images/Icons/sad53.png" class="opacity_img" alt="Regrets" width="20" height="20" ng-click="clickRegret()">
+                                        <label id="lRegret" style="font-weight:lighter">({{person[0].regretCount}})</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <img src="~/images/Icons/speech bubble10.png" class="opacity_img" alt="Condolences" width="20" height="20" ng-click="clickRegisterSignin()">
+                                        <label id="lCondolence" style="font-weight:lighter">({{person[0].condolenceCount}})</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <img src="~/images/Icons/hand-1.png" class="opacity_img" alt="Lend a Hand" width="20" height="20" ng-click="clickRegisterSignin()">
+                                        <label id="lHand" style="font-weight:lighter">({{person[0].lendHandCount}})</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <img src="~/images/Icons/share41.png" class="opacity_img" alt="Shares" width="20" height="20" ng-click="clickRegisterSignin()">
+                                        <label id="lShare" style="font-weight:lighter">({{person[0].shareCount}})</label>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>*@
+    </div>
+</body>
+<script src="~/MyScripts/IndividualAnnouncement.js"></script>
+@*<script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.count = 0;
+        });
+    </script>*@

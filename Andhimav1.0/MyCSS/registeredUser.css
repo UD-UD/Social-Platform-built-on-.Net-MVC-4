@@ -1,0 +1,425 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Raleway:600);
+
+
+		.main-header
+		{
+			background-color: #16a085;
+			width: 100%;
+			height: 65px;
+			/*display: inline-flex;*/
+
+			text-align:center;
+			
+		}
+
+		.site-name-font
+		{
+			font-family: Header-font;
+			font-size: 52px;
+			padding:6px 0px 15px 25px;
+			color: #ffffff;
+		}
+
+		.site-name
+		{
+			float: left;
+			padding-top: 5px;
+		}
+
+		body
+		{
+			margin: 0px;
+            background-color:#e9eaed !important;
+		}
+
+
+
+		#search input[type="text"] 
+		{
+		    background: url(../img/magnifier-white.png) no-repeat 10px 6px #11866f;
+		    border: 0 none;
+		    font: bold 12px Arial,Helvetica,Sans-serif;
+		    color: #d7d7d7;
+		    width:300px;
+		    padding: 13px 15px 6px 35px;
+		    -webkit-border-radius: 20px;
+		    -moz-border-radius: 20px;
+		    border-radius: 20px;
+		    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); 
+		    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+		    -webkit-transition: all 0.7s ease 0s;
+		    -moz-transition: all 0.7s ease 0s;
+		    -o-transition: all 0.7s ease 0s;
+		    transition: all 0.7s ease 0s;
+    	}
+
+	#search input[type="text"]:focus
+	 	{
+		    background: url(../img/magnifier-grey.png) no-repeat 10px 6px #fcfcfc;
+		    color: #6a6f75;
+		    width: 350px;
+		    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+		   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    	}
+
+		.search-bar 
+		{	
+			/*margin-left: 27%;*/
+			/*width:85%;*/
+
+			text-align:left;
+		    
+		    margin:0 auto !important; 
+		   display:inline-block;
+		    
+		}
+
+		.search-bar form
+		{
+			padding-top: 20px;
+
+		}
+
+		.user-details
+		{
+			display: inline-flex;
+			/*margin-left: 24%;*/
+			padding-top: 8px;
+			font-family: general-font;
+			color: #ffffff;
+
+			float: right;
+		}
+
+		#user-image
+		{
+			border-radius: 50%;
+			height: 50px;
+			width: 50px;
+			margin-right: 20px;
+		}
+
+		.user-details p,img
+		{
+			/*float:right;*/
+		}
+
+		#user-name
+		{
+			padding-right: 5px;
+			padding-top: 20px;
+		}
+
+
+    
+        ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+        ::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+        ::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+            color: transparent;
+        }
+        .dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right:0px;
+    top:65px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #888;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: #f1f1f1;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Open sans';
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    
+    background-color: #f1f1f1;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Open sans';
+}
+
+.dropdownButton
+{
+    width:auto;
+    height:auto;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+    
+
+		.panel
+		 {
+		    position: fixed;
+		    left: -15.625em; /*left or right and the width of your navigation panel*/
+		    width: 15.625em; /*should match the above value*/
+		}
+
+
+		/*---------Check Box--------------*/
+input[type=checkbox].css-checkbox {
+              position:absolute;
+               z-index:-1000;
+                left:-1000px; 
+                overflow: hidden; 
+                clip: rect(0 0 0 0); 
+                height:1px; 
+                width:1px; 
+                margin:-1px; 
+                padding:0; 
+                border:0;
+            }
+
+            input[type=checkbox].css-checkbox + label.css-label {
+              padding-left:28px;
+              height:20px; 
+              display:inline-block;
+              line-height:20px;
+              background-repeat:no-repeat;
+              background-position: 0 0;
+              
+              vertical-align:middle;
+              cursor:pointer;
+              font-size:14px;
+              font-family :'Open sans' ;
+
+            }
+
+            input[type=checkbox].css-checkbox:checked + label.css-label {
+              background-position: 0 -20px;
+            }
+            label.css-label
+             {
+			        background-image:url(../img/csscheck.png);
+			        -webkit-touch-callout: none;
+			        -webkit-user-select: none;
+			        -khtml-user-select: none;
+			        -moz-user-select: none;
+			        -ms-user-select: none;
+			        user-select: none;
+      }
+
+.announcement-box
+{
+	min-height: 160px;
+	max-width: 240px;
+	background-color: #e9eaed;
+	margin: 30px 5px 5px 5px;
+	border-top: 2px solid #4bc3a9;
+	border-radius: 0px;
+	float: left;
+
+}
+.announcement-head
+{
+	min-height: 50px;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	border-bottom: 1px solid #ffffff;
+}
+.announcement-body
+{
+	min-height: 160px;
+
+}
+.announcement-foot
+{
+	height: 50px;
+	text-align: center;
+	border-bottom:2px solid #4bc3a9;
+    border-top: 1px solid #ffffff;
+
+}
+.announcement-author-image
+{
+    height: 25px;
+    width: 25px;
+	border-radius: 10px;
+}
+.announcement-author
+{
+	float: left;
+	padding: 5px;
+}
+
+.anoouncement-header-title
+{
+	
+    padding-top: 10px;
+    
+}
+.anoouncement-header-title h3
+{
+	font-size: 14px !important;
+	font-family: 'open sans';
+	color: #888;
+	width: 150px;
+   
+}
+.announcement-person-image
+{
+	    height: 100px;
+    width: 100px;
+    border-radius: 136px;
+    /* padding-top: 10px; */
+    margin-top: 25px;
+    margin-left: 29%;
+}
+.announcement-body
+{
+	border: 0px solid #ffffff;
+}
+	
+	
+	.announcement-foot div 
+	{
+
+	    float: left;
+    margin: 0 auto;
+    width: 60px;
+    padding-top: 8px;
+	}
+
+	.announcement-foot div img {
+    height: 20px;
+    width: 20px;
+}
+
+	.announcement-container
+	{
+		overflow: hidden;
+        margin-left:6%;
+	}
+
+
+#ann-friends
+{
+    display:none;
+}
+
+.body-container
+{
+    overflow:hidden;
+    margin-top:0px;
+    
+}
+.body-container div
+{
+    float:left;
+    
+    
+
+}
+.body-left-column
+{
+    width:17%;
+    height:300px;
+    background-color:#e9eaed;
+   
+}
+
+.body-middle-column
+{
+     width:64%;
+    height:auto;
+    background-color:#f6f7f8;
+    
+}
+.body-right-column
+{
+    right:0;
+     width:17%;
+    height:500px;
+    color:#c3c2b9;
+    float:right;
+    margin-left: 23px;
+    background-color:#e9eaed;
+}
+
+.body-left-column-menu-option
+{
+    margin-top: 38px;
+    margin-left: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    color:#888888 !important;
+    font-family:'Open sans';
+}
+.body-left-column-menu-option li a {
+
+    color:#888888 !important;
+    text-decoration:none;
+    cursor:pointer;
+}
+.body-left-column-menu-option li a:hover {
+
+    color:#16a085 !important;
+}
+.announcement-filter
+{
+    margin-top: 30px;
+}
+
+.announcement-filter div {
+    margin: 4px;
+    font-size: 20px;
+}
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  background: #16a085;
+  padding: 6px 20px 7px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #1abc9c;
+  background-image: -webkit-linear-gradient(top, #1abc9c, #16a085);
+  background-image: -moz-linear-gradient(top, #1abc9c, #16a085);
+  background-image: -ms-linear-gradient(top, #1abc9c, #16a085);
+  background-image: -o-linear-gradient(top, #1abc9c, #16a085);
+  background-image: linear-gradient(to bottom, #1abc9c, #16a085);
+  text-decoration: none;
+}
+
+.custom-modal {
+    width:1080px !important;
+    }
+.modal-header {
+    margin: 10px 0px -10px 20px !important;
+}
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0px 1px 0px #FFF;
+    opacity: 0.2;
+    margin-right: 15px !important;
+}
+	
+.read-more-icon {
+    margin-top: -20px;
+    margin-left: 170px;
+}

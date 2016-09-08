@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Andhima.DAL", "Andhima.DAL", "{76E333D1-62FD-4C3C-B375-C2B5481E00BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Andhima.BLL", "Andhima.BLL", "{6E1269C6-C49E-4D71-91A5-F783E888892A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Andhima.EF", "Andhima.EF", "{B2F9481B-1EBE-46E0-9781-F947DC9322FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andhimav1.0", "Andhimav1.0\Andhimav1.0.csproj", "{B54BBD49-CF56-4B21-8D5E-79EC4E1DA6CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{356519F3-4BAF-41E7-A539-11B15C11D58A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{F5EBA4C5-5B2B-40AA-8FBD-1517B0B7112D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{B2CF18D4-DD27-4FA1-A637-D64BB8AB390E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B54BBD49-CF56-4B21-8D5E-79EC4E1DA6CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B54BBD49-CF56-4B21-8D5E-79EC4E1DA6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B54BBD49-CF56-4B21-8D5E-79EC4E1DA6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B54BBD49-CF56-4B21-8D5E-79EC4E1DA6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{356519F3-4BAF-41E7-A539-11B15C11D58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{356519F3-4BAF-41E7-A539-11B15C11D58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{356519F3-4BAF-41E7-A539-11B15C11D58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{356519F3-4BAF-41E7-A539-11B15C11D58A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5EBA4C5-5B2B-40AA-8FBD-1517B0B7112D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5EBA4C5-5B2B-40AA-8FBD-1517B0B7112D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5EBA4C5-5B2B-40AA-8FBD-1517B0B7112D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5EBA4C5-5B2B-40AA-8FBD-1517B0B7112D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2CF18D4-DD27-4FA1-A637-D64BB8AB390E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2CF18D4-DD27-4FA1-A637-D64BB8AB390E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2CF18D4-DD27-4FA1-A637-D64BB8AB390E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2CF18D4-DD27-4FA1-A637-D64BB8AB390E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{356519F3-4BAF-41E7-A539-11B15C11D58A} = {76E333D1-62FD-4C3C-B375-C2B5481E00BB}
+		{F5EBA4C5-5B2B-40AA-8FBD-1517B0B7112D} = {6E1269C6-C49E-4D71-91A5-F783E888892A}
+		{B2CF18D4-DD27-4FA1-A637-D64BB8AB390E} = {B2F9481B-1EBE-46E0-9781-F947DC9322FD}
+	EndGlobalSection
+EndGlobal

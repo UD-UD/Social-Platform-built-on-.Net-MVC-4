@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0d2f3eb9e885475fa066bf4aeb7aefa4" Name="Diagram1">
+        <EntityTypeShape EntityType="andhimaModel.AddressTypeMaster" Width="1.5" PointX="6" PointY="12.375" />
+        <EntityTypeShape EntityType="andhimaModel.Announcement" Width="1.5" PointX="5.25" PointY="19.125" />
+        <EntityTypeShape EntityType="andhimaModel.FamilyTree" Width="1.5" PointX="5.25" PointY="15.375" />
+        <EntityTypeShape EntityType="andhimaModel.ForgotPassword" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="andhimaModel.LendAHand" Width="1.5" PointX="10.5" PointY="16.375" />
+        <EntityTypeShape EntityType="andhimaModel.RegionMaster" Width="1.5" PointX="6" PointY="1.875" />
+        <EntityTypeShape EntityType="andhimaModel.TermsMaster" Width="1.5" PointX="0.75" PointY="13.5" />
+        <EntityTypeShape EntityType="andhimaModel.UserAccount" Width="1.5" PointX="3" PointY="11.75" />
+        <EntityTypeShape EntityType="andhimaModel.UserComment" Width="1.5" PointX="7.5" PointY="17" />
+        <EntityTypeShape EntityType="andhimaModel.AnnoucementUserMapping" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="andhimaModel.ContributionDetail" Width="1.5" PointX="12.75" PointY="14.375" />
+        <EntityTypeShape EntityType="andhimaModel.Nominee" Width="1.5" PointX="5.25" PointY="8.625" />
+        <EntityTypeShape EntityType="andhimaModel.UserContactDetail" Width="1.5" PointX="8.25" PointY="13" />
+        <EntityTypeShape EntityType="andhimaModel.UserPersonalDetail" Width="1.5" PointX="5.25" PointY="5.25" />
+        <AssociationConnector Association="andhimaModel.FK_UserContactDetails_AddressTypeID" />
+        <AssociationConnector Association="andhimaModel.FK_Announcements_UserID" />
+        <AssociationConnector Association="andhimaModel.FK_LendAHand_AnnouncementID" />
+        <AssociationConnector Association="andhimaModel.FK_UserComments_AnnouncementID" />
+        <AssociationConnector Association="andhimaModel.FK_FamilyTree_userID" />
+        <AssociationConnector Association="andhimaModel.FK_ContributionDetails_LendHandID" />
+        <AssociationConnector Association="andhimaModel.FK_LendAHand_UserID" />
+        <AssociationConnector Association="andhimaModel.FK_UserContactDetails_RegionCode" />
+        <AssociationConnector Association="andhimaModel.FK_UserAccount_TermsID" />
+        <AssociationConnector Association="andhimaModel.FK_ContributionDetails_ContributorID" />
+        <AssociationConnector Association="andhimaModel.FK_Nominees_NomineeID" />
+        <AssociationConnector Association="andhimaModel.FK_Nominees_UserID" />
+        <AssociationConnector Association="andhimaModel.FK_UserComments_UserID" />
+        <AssociationConnector Association="andhimaModel.FK_UserContactDetails_UserID" />
+        <AssociationConnector Association="andhimaModel.FK_UserPersonalDetails_UserID" />
+        <AssociationConnector Association="andhimaModel.CommentsUpVotedUsers" />
+        <AssociationConnector Association="andhimaModel.RegretedUsers" />
+        <EntityTypeShape EntityType="andhimaModel.Timeline" Width="1.5" PointX="9.9228708566738622" PointY="24.634159770158195" />
+        <AssociationConnector Association="andhimaModel.FK_Timeline_UserID" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

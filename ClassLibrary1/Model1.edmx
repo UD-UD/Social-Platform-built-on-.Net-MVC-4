@@ -1,0 +1,2590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="andhimaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="andhimaModelStoreContainer">
+          <EntitySet Name="AddressTypeMaster" EntityType="andhimaModel.Store.AddressTypeMaster" store:Type="Tables" Schema="andhimaadmin" />
+          <EntitySet Name="AnnoucementUserMapping" EntityType="andhimaModel.Store.AnnoucementUserMapping" store:Type="Tables" store:Schema="andhimaadmin" store:Name="AnnoucementUserMapping">
+            <DefiningQuery>SELECT 
+      [AnnoucementUserMapping].[AnnouncementID] AS [AnnouncementID], 
+      [AnnoucementUserMapping].[UserID] AS [UserID]
+      FROM [andhimaadmin].[AnnoucementUserMapping] AS [AnnoucementUserMapping]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Announcements" EntityType="andhimaModel.Store.Announcements" store:Type="Tables" Schema="andhimaadmin" />
+          <EntitySet Name="CommentsUpVotedUsers" EntityType="andhimaModel.Store.CommentsUpVotedUsers" store:Type="Tables" store:Schema="andhimaadmin" store:Name="CommentsUpVotedUsers">
+            <DefiningQuery>SELECT 
+      [CommentsUpVotedUsers].[CommentsID] AS [CommentsID], 
+      [CommentsUpVotedUsers].[UpVotedUserID] AS [UpVotedUserID]
+      FROM [andhimaadmin].[CommentsUpVotedUsers] AS [CommentsUpVotedUsers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ContributionDetails" EntityType="andhimaModel.Store.ContributionDetails" store:Type="Tables" store:Schema="andhimaadmin" store:Name="ContributionDetails">
+            <DefiningQuery>SELECT 
+      [ContributionDetails].[LendAHandID] AS [LendAHandID], 
+      [ContributionDetails].[ContributorID] AS [ContributorID], 
+      [ContributionDetails].[AmountContributed] AS [AmountContributed], 
+      [ContributionDetails].[ContributedDateTime] AS [ContributedDateTime]
+      FROM [andhimaadmin].[ContributionDetails] AS [ContributionDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FamilyTree" EntityType="andhimaModel.Store.FamilyTree" store:Type="Tables" Schema="andhimaadmin" />
+          <EntitySet Name="ForgotPassword" EntityType="andhimaModel.Store.ForgotPassword" store:Type="Tables" Schema="andhimaadmin" />
+          <EntitySet Name="LendAHand" EntityType="andhimaModel.Store.LendAHand" store:Type="Tables" Schema="andhimaadmin" />
+          <EntitySet Name="Nominees" EntityType="andhimaModel.Store.Nominees" store:Type="Tables" store:Schema="andhimaadmin" store:Name="Nominees">
+            <DefiningQuery>SELECT 
+      [Nominees].[UserID] AS [UserID], 
+      [Nominees].[NomineeID] AS [NomineeID], 
+      [Nominees].[NomineeOrder] AS [NomineeOrder], 
+      [Nominees].[Registered] AS [Registered]
+      FROM [andhimaadmin].[Nominees] AS [Nominees]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RegionMaster" EntityType="andhimaModel.Store.RegionMaster" store:Type="Tables" Schema="andhimaadmin" />
+          <EntitySet Name="RegretedUsers" EntityType="andhimaModel.Store.RegretedUsers" store:Type="Tables" store:Schema="andhimaadmin" store:Name="RegretedUsers">
+            <DefiningQuery>SELECT 
+      [RegretedUsers].[UserID] AS [UserID], 
+      [RegretedUsers].[AnnouncementID] AS [AnnouncementID]
+      FROM [andhimaadmin].[RegretedUsers] AS [RegretedUsers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TermsMaster" EntityType="andhimaModel.Store.TermsMaster" store:Type="Tables" Schema="andhimaadmin" />
+          <EntitySet Name="Timeline" EntityType="andhimaModel.Store.Timeline" store:Type="Tables" Schema="andhimaadmin" />
+          <EntitySet Name="UserAccount" EntityType="andhimaModel.Store.UserAccount" store:Type="Tables" Schema="andhimaadmin" />
+          <EntitySet Name="UserComments" EntityType="andhimaModel.Store.UserComments" store:Type="Tables" Schema="andhimaadmin" />
+          <EntitySet Name="UserContactDetails" EntityType="andhimaModel.Store.UserContactDetails" store:Type="Tables" store:Schema="andhimaadmin" store:Name="UserContactDetails">
+            <DefiningQuery>SELECT 
+      [UserContactDetails].[UserID] AS [UserID], 
+      [UserContactDetails].[AddressTypeID] AS [AddressTypeID], 
+      [UserContactDetails].[Address1] AS [Address1], 
+      [UserContactDetails].[Address2] AS [Address2], 
+      [UserContactDetails].[State] AS [State], 
+      [UserContactDetails].[Country] AS [Country], 
+      [UserContactDetails].[Zip] AS [Zip], 
+      [UserContactDetails].[RegionCode] AS [RegionCode]
+      FROM [andhimaadmin].[UserContactDetails] AS [UserContactDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserPersonalDetails" EntityType="andhimaModel.Store.UserPersonalDetails" store:Type="Tables" store:Schema="andhimaadmin" store:Name="UserPersonalDetails">
+            <DefiningQuery>SELECT 
+      [UserPersonalDetails].[UserID] AS [UserID], 
+      [UserPersonalDetails].[FirstName] AS [FirstName], 
+      [UserPersonalDetails].[LastName] AS [LastName], 
+      [UserPersonalDetails].[BirthDate] AS [BirthDate], 
+      [UserPersonalDetails].[Gender] AS [Gender], 
+      [UserPersonalDetails].[ProfileImageURL] AS [ProfileImageURL], 
+      [UserPersonalDetails].[ContactNumber] AS [ContactNumber]
+      FROM [andhimaadmin].[UserPersonalDetails] AS [UserPersonalDetails]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Announcements_UserID" Association="andhimaModel.Store.FK_Announcements_UserID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="Announcements" EntitySet="Announcements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentsUpVotedUsers_CommentsID" Association="andhimaModel.Store.FK_CommentsUpVotedUsers_CommentsID">
+            <End Role="UserComments" EntitySet="UserComments" />
+            <End Role="CommentsUpVotedUsers" EntitySet="CommentsUpVotedUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentsUpVotedUsers_UserID" Association="andhimaModel.Store.FK_CommentsUpVotedUsers_UserID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="CommentsUpVotedUsers" EntitySet="CommentsUpVotedUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContributionDetails_ContributorID" Association="andhimaModel.Store.FK_ContributionDetails_ContributorID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="ContributionDetails" EntitySet="ContributionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContributionDetails_LendHandID" Association="andhimaModel.Store.FK_ContributionDetails_LendHandID">
+            <End Role="LendAHand" EntitySet="LendAHand" />
+            <End Role="ContributionDetails" EntitySet="ContributionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FamilyTree_userID" Association="andhimaModel.Store.FK_FamilyTree_userID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="FamilyTree" EntitySet="FamilyTree" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LendAHand_AnnouncementID" Association="andhimaModel.Store.FK_LendAHand_AnnouncementID">
+            <End Role="Announcements" EntitySet="Announcements" />
+            <End Role="LendAHand" EntitySet="LendAHand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LendAHand_UserID" Association="andhimaModel.Store.FK_LendAHand_UserID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="LendAHand" EntitySet="LendAHand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nominees_NomineeID" Association="andhimaModel.Store.FK_Nominees_NomineeID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="Nominees" EntitySet="Nominees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nominees_UserID" Association="andhimaModel.Store.FK_Nominees_UserID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="Nominees" EntitySet="Nominees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegretedUsers_AnnouncementID" Association="andhimaModel.Store.FK_RegretedUsers_AnnouncementID">
+            <End Role="Announcements" EntitySet="Announcements" />
+            <End Role="RegretedUsers" EntitySet="RegretedUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegretedUsers_UserID" Association="andhimaModel.Store.FK_RegretedUsers_UserID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="RegretedUsers" EntitySet="RegretedUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Timeline_UserID" Association="andhimaModel.Store.FK_Timeline_UserID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="Timeline" EntitySet="Timeline" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAccount_TermsID" Association="andhimaModel.Store.FK_UserAccount_TermsID">
+            <End Role="TermsMaster" EntitySet="TermsMaster" />
+            <End Role="UserAccount" EntitySet="UserAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserComments_AnnouncementID" Association="andhimaModel.Store.FK_UserComments_AnnouncementID">
+            <End Role="Announcements" EntitySet="Announcements" />
+            <End Role="UserComments" EntitySet="UserComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserComments_UserID" Association="andhimaModel.Store.FK_UserComments_UserID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="UserComments" EntitySet="UserComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserContactDetails_AddressTypeID" Association="andhimaModel.Store.FK_UserContactDetails_AddressTypeID">
+            <End Role="AddressTypeMaster" EntitySet="AddressTypeMaster" />
+            <End Role="UserContactDetails" EntitySet="UserContactDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserContactDetails_RegionCode" Association="andhimaModel.Store.FK_UserContactDetails_RegionCode">
+            <End Role="RegionMaster" EntitySet="RegionMaster" />
+            <End Role="UserContactDetails" EntitySet="UserContactDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserContactDetails_UserID" Association="andhimaModel.Store.FK_UserContactDetails_UserID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="UserContactDetails" EntitySet="UserContactDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPersonalDetails_UserID" Association="andhimaModel.Store.FK_UserPersonalDetails_UserID">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="UserPersonalDetails" EntitySet="UserPersonalDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AddressTypeMaster">
+          <Key>
+            <PropertyRef Name="AddressTypeID" />
+          </Key>
+          <Property Name="AddressTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AddressType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'andhima.andhimaadmin.AnnoucementUserMapping' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="AnnoucementUserMapping">
+          <Key>
+            <PropertyRef Name="AnnouncementID" />
+          </Key>
+          <Property Name="AnnouncementID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Announcements">
+          <Key>
+            <PropertyRef Name="AnnouncementID" />
+          </Key>
+          <Property Name="AnnouncementID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AnnouncementType" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOfDemise" Type="datetime" Nullable="false" />
+          <Property Name="Gender" Type="nchar" MaxLength="10" />
+          <Property Name="BaseLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExpiredLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="varbinary(max)" />
+          <Property Name="AnnouncementText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="NumberOfShares" Type="int" />
+          <Property Name="ContentImage" Type="varbinary(max)" />
+          <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+          <Property Name="RegretCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'andhima.andhimaadmin.CommentsUpVotedUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="CommentsUpVotedUsers">
+          <Key>
+            <PropertyRef Name="CommentsID" />
+            <PropertyRef Name="UpVotedUserID" />
+          </Key>
+          <Property Name="CommentsID" Type="int" Nullable="false" />
+          <Property Name="UpVotedUserID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'andhima.andhimaadmin.ContributionDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ContributionDetails">
+          <Key>
+            <PropertyRef Name="LendAHandID" />
+            <PropertyRef Name="ContributorID" />
+            <PropertyRef Name="AmountContributed" />
+            <PropertyRef Name="ContributedDateTime" />
+          </Key>
+          <Property Name="LendAHandID" Type="int" Nullable="false" />
+          <Property Name="ContributorID" Type="int" Nullable="false" />
+          <Property Name="AmountContributed" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="ContributedDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FamilyTree">
+          <Key>
+            <PropertyRef Name="UserUniqueIndex" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="MemberFirstName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="MemberLastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Relationship" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserUniqueIndex" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentChildLink" Type="int" Nullable="false" />
+          <Property Name="MemberImage" Type="varbinary(max)" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="DateOfDemise" Type="date" />
+        </EntityType>
+        <EntityType Name="ForgotPassword">
+          <Key>
+            <PropertyRef Name="UserEmailID" />
+          </Key>
+          <Property Name="UserEmailID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="HashMailID" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="HashUserID" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="LendAHand">
+          <Key>
+            <PropertyRef Name="LendAHandID" />
+          </Key>
+          <Property Name="LendAHandID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AnnouncementID" Type="int" Nullable="false" />
+          <Property Name="LendAHandText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AmountPledged" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'andhima.andhimaadmin.Nominees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Nominees">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="NomineeID" />
+            <PropertyRef Name="NomineeOrder" />
+            <PropertyRef Name="Registered" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="NomineeID" Type="int" Nullable="false" />
+          <Property Name="NomineeOrder" Type="int" Nullable="false" />
+          <Property Name="Registered" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RegionMaster">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegionName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'andhima.andhimaadmin.RegretedUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="RegretedUsers">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="AnnouncementID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="AnnouncementID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TermsMaster">
+          <Key>
+            <PropertyRef Name="TermsID" />
+          </Key>
+          <Property Name="TermsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TermText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="CreatedTimeStamp" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Timeline">
+          <Key>
+            <PropertyRef Name="TimelineID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="PostContent" Type="nvarchar(max)" />
+          <Property Name="PostType" Type="int" Nullable="false" />
+          <Property Name="Category" Type="int" Nullable="false" />
+          <Property Name="PostImage" Type="varbinary(max)" />
+          <Property Name="VideoLink" Type="nvarchar" MaxLength="200" />
+          <Property Name="CreationTimeStamp" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="TimelineID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreated" Type="date" />
+          <Property Name="ToWhom" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="EmailID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="EmailVerified" Type="bit" Nullable="false" />
+          <Property Name="UserPassword" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="TermsID" Type="int" Nullable="false" />
+          <Property Name="AgreedToTermsDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="CreatedDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="UserComments">
+          <Key>
+            <PropertyRef Name="CommentsID" />
+          </Key>
+          <Property Name="CommentsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="AnnouncementID" Type="int" Nullable="false" />
+          <Property Name="CommentsText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDateTime" Type="datetime" />
+          <Property Name="CreatedByAdmin" Type="bit" />
+          <Property Name="CreatedByCurrentUser" Type="bit" />
+          <Property Name="ModerationPending" Type="bit" />
+          <Property Name="UpVoteCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'andhima.andhimaadmin.UserContactDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UserContactDetails">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="AddressTypeID" />
+            <PropertyRef Name="Address1" />
+            <PropertyRef Name="RegionCode" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="AddressTypeID" Type="int" Nullable="false" />
+          <Property Name="Address1" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegionCode" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'andhima.andhimaadmin.UserPersonalDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UserPersonalDetails">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="FirstName" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="ProfileImageURL" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactNumber" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Announcements_UserID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="Announcements" Type="andhimaModel.Store.Announcements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Announcements">
+              <PropertyRef Name="CreatedUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentsUpVotedUsers_CommentsID">
+          <End Role="UserComments" Type="andhimaModel.Store.UserComments" Multiplicity="1" />
+          <End Role="CommentsUpVotedUsers" Type="andhimaModel.Store.CommentsUpVotedUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserComments">
+              <PropertyRef Name="CommentsID" />
+            </Principal>
+            <Dependent Role="CommentsUpVotedUsers">
+              <PropertyRef Name="CommentsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentsUpVotedUsers_UserID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="CommentsUpVotedUsers" Type="andhimaModel.Store.CommentsUpVotedUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="CommentsUpVotedUsers">
+              <PropertyRef Name="UpVotedUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContributionDetails_ContributorID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="ContributionDetails" Type="andhimaModel.Store.ContributionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ContributionDetails">
+              <PropertyRef Name="ContributorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContributionDetails_LendHandID">
+          <End Role="LendAHand" Type="andhimaModel.Store.LendAHand" Multiplicity="1" />
+          <End Role="ContributionDetails" Type="andhimaModel.Store.ContributionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LendAHand">
+              <PropertyRef Name="LendAHandID" />
+            </Principal>
+            <Dependent Role="ContributionDetails">
+              <PropertyRef Name="LendAHandID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FamilyTree_userID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="FamilyTree" Type="andhimaModel.Store.FamilyTree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="FamilyTree">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LendAHand_AnnouncementID">
+          <End Role="Announcements" Type="andhimaModel.Store.Announcements" Multiplicity="1" />
+          <End Role="LendAHand" Type="andhimaModel.Store.LendAHand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Announcements">
+              <PropertyRef Name="AnnouncementID" />
+            </Principal>
+            <Dependent Role="LendAHand">
+              <PropertyRef Name="AnnouncementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LendAHand_UserID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="LendAHand" Type="andhimaModel.Store.LendAHand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="LendAHand">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nominees_NomineeID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="Nominees" Type="andhimaModel.Store.Nominees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Nominees">
+              <PropertyRef Name="NomineeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nominees_UserID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="Nominees" Type="andhimaModel.Store.Nominees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Nominees">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegretedUsers_AnnouncementID">
+          <End Role="Announcements" Type="andhimaModel.Store.Announcements" Multiplicity="1" />
+          <End Role="RegretedUsers" Type="andhimaModel.Store.RegretedUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Announcements">
+              <PropertyRef Name="AnnouncementID" />
+            </Principal>
+            <Dependent Role="RegretedUsers">
+              <PropertyRef Name="AnnouncementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegretedUsers_UserID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="RegretedUsers" Type="andhimaModel.Store.RegretedUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="RegretedUsers">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Timeline_UserID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="Timeline" Type="andhimaModel.Store.Timeline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Timeline">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccount_TermsID">
+          <End Role="TermsMaster" Type="andhimaModel.Store.TermsMaster" Multiplicity="1" />
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TermsMaster">
+              <PropertyRef Name="TermsID" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="TermsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserComments_AnnouncementID">
+          <End Role="Announcements" Type="andhimaModel.Store.Announcements" Multiplicity="1" />
+          <End Role="UserComments" Type="andhimaModel.Store.UserComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Announcements">
+              <PropertyRef Name="AnnouncementID" />
+            </Principal>
+            <Dependent Role="UserComments">
+              <PropertyRef Name="AnnouncementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserComments_UserID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="UserComments" Type="andhimaModel.Store.UserComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserComments">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserContactDetails_AddressTypeID">
+          <End Role="AddressTypeMaster" Type="andhimaModel.Store.AddressTypeMaster" Multiplicity="1" />
+          <End Role="UserContactDetails" Type="andhimaModel.Store.UserContactDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressTypeMaster">
+              <PropertyRef Name="AddressTypeID" />
+            </Principal>
+            <Dependent Role="UserContactDetails">
+              <PropertyRef Name="AddressTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserContactDetails_RegionCode">
+          <End Role="RegionMaster" Type="andhimaModel.Store.RegionMaster" Multiplicity="1" />
+          <End Role="UserContactDetails" Type="andhimaModel.Store.UserContactDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegionMaster">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="UserContactDetails">
+              <PropertyRef Name="RegionCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserContactDetails_UserID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="UserContactDetails" Type="andhimaModel.Store.UserContactDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserContactDetails">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPersonalDetails_UserID">
+          <End Role="UserAccount" Type="andhimaModel.Store.UserAccount" Multiplicity="1" />
+          <End Role="UserPersonalDetails" Type="andhimaModel.Store.UserPersonalDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserPersonalDetails">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="USP_Add_Ann_Lend_Data" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="Anntype" Type="nchar" Mode="In" />
+          <Parameter Name="firstname" Type="nvarchar" Mode="In" />
+          <Parameter Name="lastname" Type="nvarchar" Mode="In" />
+          <Parameter Name="dod" Type="date" Mode="In" />
+          <Parameter Name="gen" Type="nchar" Mode="In" />
+          <Parameter Name="bloc" Type="nvarchar" Mode="In" />
+          <Parameter Name="eloc" Type="nvarchar" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="userID" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="date" Mode="In" />
+          <Parameter Name="NumberOfShares" Type="int" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="RegretCount" Type="int" Mode="In" />
+          <Parameter Name="LendAHandText" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="AmountPledged" Type="decimal" Mode="In" />
+          <Parameter Name="EndDate" Type="date" Mode="In" />
+          <Parameter Name="fID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_Add_Ann_Lend_Data_OTHER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="Anntype" Type="nchar" Mode="In" />
+          <Parameter Name="firstname" Type="nvarchar" Mode="In" />
+          <Parameter Name="lastname" Type="nvarchar" Mode="In" />
+          <Parameter Name="dod" Type="date" Mode="In" />
+          <Parameter Name="gen" Type="nchar" Mode="In" />
+          <Parameter Name="bloc" Type="nvarchar" Mode="In" />
+          <Parameter Name="eloc" Type="nvarchar" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="userID" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="date" Mode="In" />
+          <Parameter Name="NumberOfShares" Type="int" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="RegretCount" Type="int" Mode="In" />
+          <Parameter Name="LendAHandText" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="AmountPledged" Type="decimal" Mode="In" />
+          <Parameter Name="EndDate" Type="date" Mode="In" />
+          <Parameter Name="fID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_Fetch_Images" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin" />
+        <Function Name="USP_fetchFamilyTree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="userid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_FetchIndividualAnnouncement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="AnnouncementId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_GetAllAnnouncement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin" />
+        <Function Name="USP_GetAllComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="announcmentID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_GetAllLAH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin" />
+        <Function Name="USP_GetAnnouncementByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_GetAnnouncementID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="Created" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="USP_getTimeline" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="userid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_getUserAnouncement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_getUserLAH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_InsertComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="ParentID" Type="int" Mode="In" />
+          <Parameter Name="AnnouncementID" Type="int" Mode="In" />
+          <Parameter Name="CommentsText" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CreatedDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="UpVoteCount" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_insertEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="userid" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Message" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Category" Type="int" Mode="In" />
+          <Parameter Name="Type" Type="int" Mode="In" />
+          <Parameter Name="Vlink" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="USP_LAHDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="anouncementID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_reomoveNodeFTree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="uindex" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_UpdateComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="ParentID" Type="int" Mode="In" />
+          <Parameter Name="AnnouncementID" Type="int" Mode="In" />
+          <Parameter Name="CommentsText" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CreatedDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="UpVoteCount" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_updateFamilyTree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="uindex" Type="int" Mode="In" />
+          <Parameter Name="fname" Type="varchar" Mode="In" />
+          <Parameter Name="lname" Type="varchar" Mode="In" />
+          <Parameter Name="rship" Type="varchar" Mode="In" />
+          <Parameter Name="DOB" Type="date" Mode="In" />
+          <Parameter Name="DOD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_UpdateVote" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="andhimaadmin">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="UpVoteCount" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddUserAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="checkResetCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="code" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="CheckUserPresence" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="uname" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="deleteForgot" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getContactDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="uid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getMailCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getMailId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="hashmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="hashcode" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Getname" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="uid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getPersonalDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="userid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="uname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="insertForgotPw" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="numbhash" Type="nvarchar" Mode="In" />
+          <Parameter Name="mailhash" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="insertPersonal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="userid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="insertProfFB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="userid" Type="int" Mode="In" />
+          <Parameter Name="fname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="insertUserContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="userid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="LoginValidate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="resetpw" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="pw" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="updateProfile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="uid" Type="int" Mode="In" />
+          <Parameter Name="fname" Type="nvarchar" Mode="In" />
+          <Parameter Name="lname" Type="nvarchar" Mode="In" />
+          <Parameter Name="bdate" Type="date" Mode="In" />
+          <Parameter Name="gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="no" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="updateprofilepic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="image" Type="nvarchar" Mode="In" />
+          <Parameter Name="userid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_getAnnouncementDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha" />
+        <Function Name="USP_getAnnouncementDetailsFilterGenNm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_getAnnouncementDetailsFilterGenNmDt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="fD" Type="date" Mode="In" />
+          <Parameter Name="tD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_getAnnouncementDetailsFilterGenNmFDt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="fD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_getAnnouncementDetailsFilterGenNmTDt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="tD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_getDetailsBasedOnFilters" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="FilterName" Type="nvarchar" Mode="In" />
+          <Parameter Name="FilterToDate" Type="date" Mode="In" />
+          <Parameter Name="FilterFromDate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_getFemaleAnnouncementDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha" />
+        <Function Name="USP_getFemaleAnnouncementDetailsFilterGenNm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_getFemaleAnnouncementDetailsFilterGenNmDt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="fD" Type="date" Mode="In" />
+          <Parameter Name="tD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_getFemaleAnnouncementDetailsFilterGenNmFDt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="fD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_getFemaleAnnouncementDetailsFilterGenNmTDt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="tD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_getMaleAnnouncementDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha" />
+        <Function Name="USP_getMaleAnnouncementDetailsFilterGenNm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_getMaleAnnouncementDetailsFilterGenNmDt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="fD" Type="date" Mode="In" />
+          <Parameter Name="tD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_getMaleAnnouncementDetailsFilterGenNmFDt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="fD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_getMaleAnnouncementDetailsFilterGenNmTDt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="nm" Type="nvarchar" Mode="In" />
+          <Parameter Name="tD" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_Regreted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="suvecha">
+          <Parameter Name="annid" Type="int" Mode="In" />
+          <Parameter Name="uid" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="andhimaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="andhimaEntities" p1:LazyLoadingEnabled="true">
+          <FunctionImport Name="AddUserAccount">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="LoginValidate" ReturnType="Collection(String)">
+          <Parameter Name="username" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetAllComments" ReturnType="Collection(andhimaModel.USP_GetAllComments_Result)">
+          <Parameter Name="announcmentID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="deleteForgot">
+          <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insertForgotPw">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="numbhash" Mode="In" Type="String" />
+            <Parameter Name="mailhash" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="resetpw">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="pw" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="checkResetCode" ReturnType="Collection(Int32)">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="code" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getMailId" ReturnType="Collection(String)">
+            <Parameter Name="hashmail" Mode="In" Type="String" />
+            <Parameter Name="hashcode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_InsertComment">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="ParentID" Mode="In" Type="Int32" />
+            <Parameter Name="AnnouncementID" Mode="In" Type="Int32" />
+            <Parameter Name="CommentsText" Mode="In" Type="String" />
+            <Parameter Name="CreatedDateTime" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedDateTime" Mode="In" Type="DateTime" />
+            <Parameter Name="UpVoteCount" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_UpdateComment">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="ParentID" Mode="In" Type="Int32" />
+            <Parameter Name="AnnouncementID" Mode="In" Type="Int32" />
+            <Parameter Name="CommentsText" Mode="In" Type="String" />
+            <Parameter Name="CreatedDateTime" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedDateTime" Mode="In" Type="DateTime" />
+            <Parameter Name="UpVoteCount" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_UpdateVote">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="UpVoteCount" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Fetch_Images" ReturnType="Collection(Binary)" />
+          <FunctionImport Name="getMailCount" ReturnType="Collection(Int32)">
+          <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getFamilyTree" ReturnType="Collection(andhimaModel.USP_getFamilyTree_Result)" />
+          <FunctionImport Name="CheckUserPresence" ReturnType="Collection(Int32)">
+          <Parameter Name="uname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getPersonalDetails" ReturnType="Collection(andhimaModel.getPersonalDetails_Result)">
+          <Parameter Name="userid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getUserID" ReturnType="Collection(Int32)">
+          <Parameter Name="uname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insertPersonal">
+          <Parameter Name="userid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="insertProfFB">
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+            <Parameter Name="fname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insertUserContact">
+          <Parameter Name="userid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_FetchIndividualAnnouncement" ReturnType="Collection(andhimaModel.USP_FetchIndividualAnnouncement_Result)">
+          <Parameter Name="AnnouncementId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getContactDetails" ReturnType="Collection(andhimaModel.getContactDetails_Result)">
+          <Parameter Name="uid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getAnnouncementDetails" ReturnType="Collection(andhimaModel.USP_getAnnouncementDetails_Result)" />
+          <FunctionImport Name="USP_getAnnouncementDetailsFilterGenNm" ReturnType="Collection(andhimaModel.USP_getAnnouncementDetailsFilterGenNm_Result)">
+          <Parameter Name="nm" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getAnnouncementDetailsFilterGenNmDt" ReturnType="Collection(andhimaModel.USP_getAnnouncementDetailsFilterGenNmDt_Result)">
+            <Parameter Name="nm" Mode="In" Type="String" />
+            <Parameter Name="fD" Mode="In" Type="DateTime" />
+            <Parameter Name="tD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getAnnouncementDetailsFilterGenNmFDt" ReturnType="Collection(andhimaModel.USP_getAnnouncementDetailsFilterGenNmFDt_Result)">
+            <Parameter Name="nm" Mode="In" Type="String" />
+            <Parameter Name="fD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getAnnouncementDetailsFilterGenNmTDt" ReturnType="Collection(andhimaModel.USP_getAnnouncementDetailsFilterGenNmTDt_Result)">
+            <Parameter Name="nm" Mode="In" Type="String" />
+            <Parameter Name="tD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getDetailsBasedOnFilters" ReturnType="Collection(andhimaModel.USP_getDetailsBasedOnFilters_Result)">
+            <Parameter Name="FilterName" Mode="In" Type="String" />
+            <Parameter Name="FilterToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="FilterFromDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getFemaleAnnouncementDetails" ReturnType="Collection(andhimaModel.USP_getFemaleAnnouncementDetails_Result)" />
+          <FunctionImport Name="USP_getFemaleAnnouncementDetailsFilterGenNm" ReturnType="Collection(andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNm_Result)">
+          <Parameter Name="nm" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getFemaleAnnouncementDetailsFilterGenNmDt" ReturnType="Collection(andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNmDt_Result)">
+            <Parameter Name="nm" Mode="In" Type="String" />
+            <Parameter Name="fD" Mode="In" Type="DateTime" />
+            <Parameter Name="tD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getFemaleAnnouncementDetailsFilterGenNmFDt" ReturnType="Collection(andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNmFDt_Result)">
+            <Parameter Name="nm" Mode="In" Type="String" />
+            <Parameter Name="fD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getFemaleAnnouncementDetailsFilterGenNmTDt" ReturnType="Collection(andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNmTDt_Result)">
+            <Parameter Name="nm" Mode="In" Type="String" />
+            <Parameter Name="tD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getMaleAnnouncementDetails" ReturnType="Collection(andhimaModel.USP_getMaleAnnouncementDetails_Result)" />
+          <FunctionImport Name="USP_getMaleAnnouncementDetailsFilterGenNm" ReturnType="Collection(andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNm_Result)">
+          <Parameter Name="nm" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getMaleAnnouncementDetailsFilterGenNmDt" ReturnType="Collection(andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNmDt_Result)">
+            <Parameter Name="nm" Mode="In" Type="String" />
+            <Parameter Name="fD" Mode="In" Type="DateTime" />
+            <Parameter Name="tD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getMaleAnnouncementDetailsFilterGenNmFDt" ReturnType="Collection(andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNmFDt_Result)">
+            <Parameter Name="nm" Mode="In" Type="String" />
+            <Parameter Name="fD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getMaleAnnouncementDetailsFilterGenNmTDt" ReturnType="Collection(andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNmTDt_Result)">
+            <Parameter Name="nm" Mode="In" Type="String" />
+            <Parameter Name="tD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getUserAnouncement" ReturnType="Collection(Int32)">
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateProfile">
+            <Parameter Name="uid" Mode="In" Type="Int32" />
+            <Parameter Name="fname" Mode="In" Type="String" />
+            <Parameter Name="lname" Mode="In" Type="String" />
+            <Parameter Name="bdate" Mode="In" Type="DateTime" />
+            <Parameter Name="gender" Mode="In" Type="String" />
+            <Parameter Name="no" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="updateprofilepic">
+            <Parameter Name="image" Mode="In" Type="String" />
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Getname" ReturnType="Collection(andhimaModel.Getname_Result)">
+          <Parameter Name="uid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Add_Ann_Lend_Data">
+            <Parameter Name="Anntype" Mode="In" Type="String" />
+            <Parameter Name="firstname" Mode="In" Type="String" />
+            <Parameter Name="lastname" Mode="In" Type="String" />
+            <Parameter Name="dod" Mode="In" Type="DateTime" />
+            <Parameter Name="gen" Mode="In" Type="String" />
+            <Parameter Name="bloc" Mode="In" Type="String" />
+            <Parameter Name="eloc" Mode="In" Type="String" />
+            <Parameter Name="msg" Mode="In" Type="String" />
+            <Parameter Name="userID" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="NumberOfShares" Mode="In" Type="Int32" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="RegretCount" Mode="In" Type="Int32" />
+            <Parameter Name="LendAHandText" Mode="In" Type="String" />
+            <Parameter Name="AmountPledged" Mode="In" Type="Decimal" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+            <Parameter Name="fID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetAnnouncementByUser" ReturnType="Collection(Int32)">
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetAllAnnouncement" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="USP_LAHDetails" ReturnType="Collection(andhimaModel.USP_LAHDetails_Result)">
+          <Parameter Name="anouncementID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Regreted">
+            <Parameter Name="annid" Mode="In" Type="Int32" />
+            <Parameter Name="uid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="AddressTypeMasters" EntityType="andhimaModel.AddressTypeMaster" />
+          <EntitySet Name="Announcements" EntityType="andhimaModel.Announcement" />
+          <EntitySet Name="FamilyTrees" EntityType="andhimaModel.FamilyTree" />
+          <EntitySet Name="ForgotPasswords" EntityType="andhimaModel.ForgotPassword" />
+          <EntitySet Name="LendAHands" EntityType="andhimaModel.LendAHand" />
+          <EntitySet Name="RegionMasters" EntityType="andhimaModel.RegionMaster" />
+          <EntitySet Name="TermsMasters" EntityType="andhimaModel.TermsMaster" />
+          <EntitySet Name="Timelines" EntityType="andhimaModel.Timeline" />
+          <EntitySet Name="UserAccounts" EntityType="andhimaModel.UserAccount" />
+          <EntitySet Name="UserComments" EntityType="andhimaModel.UserComment" />
+          <EntitySet Name="AnnoucementUserMappings" EntityType="andhimaModel.AnnoucementUserMapping" />
+          <EntitySet Name="ContributionDetails" EntityType="andhimaModel.ContributionDetail" />
+          <EntitySet Name="Nominees" EntityType="andhimaModel.Nominee" />
+          <EntitySet Name="UserContactDetails" EntityType="andhimaModel.UserContactDetail" />
+          <EntitySet Name="UserPersonalDetails" EntityType="andhimaModel.UserPersonalDetail" />
+          <AssociationSet Name="FK_UserContactDetails_AddressTypeID" Association="andhimaModel.FK_UserContactDetails_AddressTypeID">
+            <End Role="AddressTypeMaster" EntitySet="AddressTypeMasters" />
+            <End Role="UserContactDetail" EntitySet="UserContactDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Announcements_UserID" Association="andhimaModel.FK_Announcements_UserID">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="Announcement" EntitySet="Announcements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LendAHand_AnnouncementID" Association="andhimaModel.FK_LendAHand_AnnouncementID">
+            <End Role="Announcement" EntitySet="Announcements" />
+            <End Role="LendAHand" EntitySet="LendAHands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserComments_AnnouncementID" Association="andhimaModel.FK_UserComments_AnnouncementID">
+            <End Role="Announcement" EntitySet="Announcements" />
+            <End Role="UserComment" EntitySet="UserComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FamilyTree_userID" Association="andhimaModel.FK_FamilyTree_userID">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="FamilyTree" EntitySet="FamilyTrees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContributionDetails_LendHandID" Association="andhimaModel.FK_ContributionDetails_LendHandID">
+            <End Role="LendAHand" EntitySet="LendAHands" />
+            <End Role="ContributionDetail" EntitySet="ContributionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LendAHand_UserID" Association="andhimaModel.FK_LendAHand_UserID">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="LendAHand" EntitySet="LendAHands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserContactDetails_RegionCode" Association="andhimaModel.FK_UserContactDetails_RegionCode">
+            <End Role="RegionMaster" EntitySet="RegionMasters" />
+            <End Role="UserContactDetail" EntitySet="UserContactDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAccount_TermsID" Association="andhimaModel.FK_UserAccount_TermsID">
+            <End Role="TermsMaster" EntitySet="TermsMasters" />
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Timeline_UserID" Association="andhimaModel.FK_Timeline_UserID">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="Timeline" EntitySet="Timelines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContributionDetails_ContributorID" Association="andhimaModel.FK_ContributionDetails_ContributorID">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="ContributionDetail" EntitySet="ContributionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nominees_NomineeID" Association="andhimaModel.FK_Nominees_NomineeID">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="Nominee" EntitySet="Nominees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nominees_UserID" Association="andhimaModel.FK_Nominees_UserID">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="Nominee" EntitySet="Nominees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserComments_UserID" Association="andhimaModel.FK_UserComments_UserID">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="UserComment" EntitySet="UserComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserContactDetails_UserID" Association="andhimaModel.FK_UserContactDetails_UserID">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="UserContactDetail" EntitySet="UserContactDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPersonalDetails_UserID" Association="andhimaModel.FK_UserPersonalDetails_UserID">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="UserPersonalDetail" EntitySet="UserPersonalDetails" />
+          </AssociationSet>
+          <AssociationSet Name="CommentsUpVotedUsers" Association="andhimaModel.CommentsUpVotedUsers">
+            <End Role="UserComment" EntitySet="UserComments" />
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="RegretedUsers" Association="andhimaModel.RegretedUsers">
+            <End Role="Announcement" EntitySet="Announcements" />
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+          </AssociationSet>
+          <FunctionImport Name="USP_Add_Ann_Lend_Data_OTHER" ReturnType="Collection(Int32)">
+            <Parameter Name="Anntype" Mode="In" Type="String" />
+            <Parameter Name="firstname" Mode="In" Type="String" />
+            <Parameter Name="lastname" Mode="In" Type="String" />
+            <Parameter Name="dod" Mode="In" Type="DateTime" />
+            <Parameter Name="gen" Mode="In" Type="String" />
+            <Parameter Name="bloc" Mode="In" Type="String" />
+            <Parameter Name="eloc" Mode="In" Type="String" />
+            <Parameter Name="msg" Mode="In" Type="String" />
+            <Parameter Name="userID" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="NumberOfShares" Mode="In" Type="Int32" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="RegretCount" Mode="In" Type="Int32" />
+            <Parameter Name="LendAHandText" Mode="In" Type="String" />
+            <Parameter Name="AmountPledged" Mode="In" Type="Decimal" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+            <Parameter Name="fID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetAnnouncementID" ReturnType="Collection(Int32)">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="Created" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getTimeline" ReturnType="Collection(andhimaModel.USP_getTimeline_Result)">
+          <Parameter Name="userid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_insertEvent">
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Message" Mode="In" Type="String" />
+            <Parameter Name="Category" Mode="In" Type="Int32" />
+            <Parameter Name="Type" Mode="In" Type="Int32" />
+            <Parameter Name="Vlink" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetAllLAH" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="USP_getUserLAH" ReturnType="Collection(Int32)">
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_getFamilyTree1" ReturnType="Collection(andhimaModel.USP_getFamilyTree1_Result)">
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_reomoveNodeFTree">
+            <Parameter Name="uindex" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_updateFamilyTree">
+            <Parameter Name="uindex" Mode="In" Type="Int32" />
+            <Parameter Name="fname" Mode="In" Type="String" />
+            <Parameter Name="lname" Mode="In" Type="String" />
+            <Parameter Name="rship" Mode="In" Type="String" />
+            <Parameter Name="DOB" Mode="In" Type="DateTime" />
+            <Parameter Name="DOD" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_fetchFamilyTree" ReturnType="Collection(andhimaModel.USP_fetchFamilyTree_Result)">
+          <Parameter Name="userid" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="USP_GetAllComments_Result">
+          <Property Type="Int32" Name="CommentsID" Nullable="false" />
+          <Property Type="Int32" Name="ParentID" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedDateTime" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ModifiedDateTime" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CommentsText" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="UpVoteCount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getFamilyTree_Result">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="MemberFirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MemberLastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Relationship" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="UserUniqueIndex" Nullable="false" />
+          <Property Type="Int32" Name="ParentChildLink" Nullable="false" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getPersonalDetails_Result">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="BirthDate" Nullable="true" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ContactNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProfileImageURL" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_FetchIndividualAnnouncement_Result">
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getContactDetails_Result">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="AddressTypeID" Nullable="false" />
+          <Property Type="String" Name="Address1" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Address2" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Zip" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="RegionCode" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_getAnnouncementDetails_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getAnnouncementDetailsFilterGenNm_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getAnnouncementDetailsFilterGenNmDt_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getAnnouncementDetailsFilterGenNmFDt_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getAnnouncementDetailsFilterGenNmTDt_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getDetailsBasedOnFilters_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="100" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getFemaleAnnouncementDetails_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getFemaleAnnouncementDetailsFilterGenNm_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getFemaleAnnouncementDetailsFilterGenNmDt_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getFemaleAnnouncementDetailsFilterGenNmFDt_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getFemaleAnnouncementDetailsFilterGenNmTDt_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getMaleAnnouncementDetails_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getMaleAnnouncementDetailsFilterGenNm_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getMaleAnnouncementDetailsFilterGenNmDt_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getMaleAnnouncementDetailsFilterGenNmFDt_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_getMaleAnnouncementDetailsFilterGenNmTDt_Result">
+          <Property Type="Int32" Name="AnnouncementID" Nullable="false" />
+          <Property Type="String" Name="DeceasedName" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Image" Nullable="true" />
+          <Property Type="String" Name="AnnouncementText" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfShares" Nullable="true" />
+          <Property Type="Binary" Name="ContentImage" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="Int32" Name="RegretCount" Nullable="true" />
+          <Property Type="String" Name="CreatedUserName" Nullable="false" MaxLength="101" />
+          <Property Type="Binary" Name="ProfileImage" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Getname_Result">
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="USP_LAHDetails_Result">
+          <Property Type="Int32" Name="LAHID" Nullable="true" />
+          <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="amount" Nullable="true" />
+          <Property Type="String" Name="LAH_message" Nullable="true" />
+          <Property Type="Int32" Name="amountPledge" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="AddressTypeMaster">
+          <Key>
+            <PropertyRef Name="AddressTypeID" />
+          </Key>
+          <Property Name="AddressTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AddressType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserContactDetails" Relationship="andhimaModel.FK_UserContactDetails_AddressTypeID" FromRole="AddressTypeMaster" ToRole="UserContactDetail" />
+        </EntityType>
+        <EntityType Name="Announcement">
+          <Key>
+            <PropertyRef Name="AnnouncementID" />
+          </Key>
+          <Property Name="AnnouncementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnnouncementType" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfDemise" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="BaseLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExpiredLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AnnouncementText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedUserID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NumberOfShares" Type="Int32" />
+          <Property Name="ContentImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RegretCount" Type="Int32" />
+          <NavigationProperty Name="UserAccount" Relationship="andhimaModel.FK_Announcements_UserID" FromRole="Announcement" ToRole="UserAccount" />
+          <NavigationProperty Name="LendAHands" Relationship="andhimaModel.FK_LendAHand_AnnouncementID" FromRole="Announcement" ToRole="LendAHand" />
+          <NavigationProperty Name="UserComments" Relationship="andhimaModel.FK_UserComments_AnnouncementID" FromRole="Announcement" ToRole="UserComment" />
+          <NavigationProperty Name="UserAccounts" Relationship="andhimaModel.RegretedUsers" FromRole="Announcement" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="FamilyTree">
+          <Key>
+            <PropertyRef Name="UserUniqueIndex" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="MemberFirstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MemberLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Relationship" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserUniqueIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentChildLink" Type="Int32" Nullable="false" />
+          <Property Name="MemberImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="DateOfDemise" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="UserAccount" Relationship="andhimaModel.FK_FamilyTree_userID" FromRole="FamilyTree" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="ForgotPassword">
+          <Key>
+            <PropertyRef Name="UserEmailID" />
+          </Key>
+          <Property Name="UserEmailID" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="HashMailID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HashUserID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LendAHand">
+          <Key>
+            <PropertyRef Name="LendAHandID" />
+          </Key>
+          <Property Name="LendAHandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnnouncementID" Type="Int32" Nullable="false" />
+          <Property Name="LendAHandText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AmountPledged" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Announcement" Relationship="andhimaModel.FK_LendAHand_AnnouncementID" FromRole="LendAHand" ToRole="Announcement" />
+          <NavigationProperty Name="ContributionDetails" Relationship="andhimaModel.FK_ContributionDetails_LendHandID" FromRole="LendAHand" ToRole="ContributionDetail" />
+          <NavigationProperty Name="UserAccount" Relationship="andhimaModel.FK_LendAHand_UserID" FromRole="LendAHand" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="RegionMaster">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserContactDetails" Relationship="andhimaModel.FK_UserContactDetails_RegionCode" FromRole="RegionMaster" ToRole="UserContactDetail" />
+        </EntityType>
+        <EntityType Name="TermsMaster">
+          <Key>
+            <PropertyRef Name="TermsID" />
+          </Key>
+          <Property Name="TermsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TermText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedTimeStamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="UserAccounts" Relationship="andhimaModel.FK_UserAccount_TermsID" FromRole="TermsMaster" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="Timeline">
+          <Key>
+            <PropertyRef Name="TimelineID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="PostContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PostType" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="Int32" Nullable="false" />
+          <Property Name="PostImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="VideoLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreationTimeStamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="TimelineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreated" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="UserAccount" Relationship="andhimaModel.FK_Timeline_UserID" FromRole="Timeline" ToRole="UserAccount" />
+          <Property Name="ToWhom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="EmailVerified" Type="Boolean" Nullable="false" />
+          <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="TermsID" Type="Int32" Nullable="false" />
+          <Property Name="AgreedToTermsDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Announcements" Relationship="andhimaModel.FK_Announcements_UserID" FromRole="UserAccount" ToRole="Announcement" />
+          <NavigationProperty Name="FamilyTrees" Relationship="andhimaModel.FK_FamilyTree_userID" FromRole="UserAccount" ToRole="FamilyTree" />
+          <NavigationProperty Name="LendAHands" Relationship="andhimaModel.FK_LendAHand_UserID" FromRole="UserAccount" ToRole="LendAHand" />
+          <NavigationProperty Name="TermsMaster" Relationship="andhimaModel.FK_UserAccount_TermsID" FromRole="UserAccount" ToRole="TermsMaster" />
+          <NavigationProperty Name="Timelines" Relationship="andhimaModel.FK_Timeline_UserID" FromRole="UserAccount" ToRole="Timeline" />
+          <NavigationProperty Name="ContributionDetails" Relationship="andhimaModel.FK_ContributionDetails_ContributorID" FromRole="UserAccount" ToRole="ContributionDetail" />
+          <NavigationProperty Name="Nominees" Relationship="andhimaModel.FK_Nominees_NomineeID" FromRole="UserAccount" ToRole="Nominee" />
+          <NavigationProperty Name="Nominees1" Relationship="andhimaModel.FK_Nominees_UserID" FromRole="UserAccount" ToRole="Nominee" />
+          <NavigationProperty Name="UserComments" Relationship="andhimaModel.FK_UserComments_UserID" FromRole="UserAccount" ToRole="UserComment" />
+          <NavigationProperty Name="UserContactDetails" Relationship="andhimaModel.FK_UserContactDetails_UserID" FromRole="UserAccount" ToRole="UserContactDetail" />
+          <NavigationProperty Name="UserPersonalDetails" Relationship="andhimaModel.FK_UserPersonalDetails_UserID" FromRole="UserAccount" ToRole="UserPersonalDetail" />
+          <NavigationProperty Name="UserComments1" Relationship="andhimaModel.CommentsUpVotedUsers" FromRole="UserAccount" ToRole="UserComment" />
+          <NavigationProperty Name="Announcements1" Relationship="andhimaModel.RegretedUsers" FromRole="UserAccount" ToRole="Announcement" />
+        </EntityType>
+        <EntityType Name="UserComment">
+          <Key>
+            <PropertyRef Name="CommentsID" />
+          </Key>
+          <Property Name="CommentsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="AnnouncementID" Type="Int32" Nullable="false" />
+          <Property Name="CommentsText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreatedByAdmin" Type="Boolean" />
+          <Property Name="CreatedByCurrentUser" Type="Boolean" />
+          <Property Name="ModerationPending" Type="Boolean" />
+          <Property Name="UpVoteCount" Type="Int32" />
+          <NavigationProperty Name="Announcement" Relationship="andhimaModel.FK_UserComments_AnnouncementID" FromRole="UserComment" ToRole="Announcement" />
+          <NavigationProperty Name="UserAccount" Relationship="andhimaModel.FK_UserComments_UserID" FromRole="UserComment" ToRole="UserAccount" />
+          <NavigationProperty Name="UserAccounts" Relationship="andhimaModel.CommentsUpVotedUsers" FromRole="UserComment" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="AnnoucementUserMapping">
+          <Key>
+            <PropertyRef Name="AnnouncementID" />
+          </Key>
+          <Property Name="AnnouncementID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ContributionDetail">
+          <Key>
+            <PropertyRef Name="LendAHandID" />
+            <PropertyRef Name="ContributorID" />
+            <PropertyRef Name="AmountContributed" />
+            <PropertyRef Name="ContributedDateTime" />
+          </Key>
+          <Property Name="LendAHandID" Type="Int32" Nullable="false" />
+          <Property Name="ContributorID" Type="Int32" Nullable="false" />
+          <Property Name="AmountContributed" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ContributedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="LendAHand" Relationship="andhimaModel.FK_ContributionDetails_LendHandID" FromRole="ContributionDetail" ToRole="LendAHand" />
+          <NavigationProperty Name="UserAccount" Relationship="andhimaModel.FK_ContributionDetails_ContributorID" FromRole="ContributionDetail" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="Nominee">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="NomineeID" />
+            <PropertyRef Name="NomineeOrder" />
+            <PropertyRef Name="Registered" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="NomineeID" Type="Int32" Nullable="false" />
+          <Property Name="NomineeOrder" Type="Int32" Nullable="false" />
+          <Property Name="Registered" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="UserAccount" Relationship="andhimaModel.FK_Nominees_NomineeID" FromRole="Nominee" ToRole="UserAccount" />
+          <NavigationProperty Name="UserAccount1" Relationship="andhimaModel.FK_Nominees_UserID" FromRole="Nominee" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="UserContactDetail">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="AddressTypeID" />
+            <PropertyRef Name="Address1" />
+            <PropertyRef Name="RegionCode" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="AddressTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Address1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegionCode" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AddressTypeMaster" Relationship="andhimaModel.FK_UserContactDetails_AddressTypeID" FromRole="UserContactDetail" ToRole="AddressTypeMaster" />
+          <NavigationProperty Name="RegionMaster" Relationship="andhimaModel.FK_UserContactDetails_RegionCode" FromRole="UserContactDetail" ToRole="RegionMaster" />
+          <NavigationProperty Name="UserAccount" Relationship="andhimaModel.FK_UserContactDetails_UserID" FromRole="UserContactDetail" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="UserPersonalDetail">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="FirstName" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserAccount" Relationship="andhimaModel.FK_UserPersonalDetails_UserID" FromRole="UserPersonalDetail" ToRole="UserAccount" />
+          <Property Type="String" Name="ProfileImageURL" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_UserContactDetails_AddressTypeID">
+          <End Type="andhimaModel.AddressTypeMaster" Role="AddressTypeMaster" Multiplicity="1" />
+          <End Type="andhimaModel.UserContactDetail" Role="UserContactDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressTypeMaster">
+              <PropertyRef Name="AddressTypeID" />
+            </Principal>
+            <Dependent Role="UserContactDetail">
+              <PropertyRef Name="AddressTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Announcements_UserID">
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="andhimaModel.Announcement" Role="Announcement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Announcement">
+              <PropertyRef Name="CreatedUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LendAHand_AnnouncementID">
+          <End Type="andhimaModel.Announcement" Role="Announcement" Multiplicity="1" />
+          <End Type="andhimaModel.LendAHand" Role="LendAHand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Announcement">
+              <PropertyRef Name="AnnouncementID" />
+            </Principal>
+            <Dependent Role="LendAHand">
+              <PropertyRef Name="AnnouncementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserComments_AnnouncementID">
+          <End Type="andhimaModel.Announcement" Role="Announcement" Multiplicity="1" />
+          <End Type="andhimaModel.UserComment" Role="UserComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Announcement">
+              <PropertyRef Name="AnnouncementID" />
+            </Principal>
+            <Dependent Role="UserComment">
+              <PropertyRef Name="AnnouncementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FamilyTree_userID">
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="andhimaModel.FamilyTree" Role="FamilyTree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="FamilyTree">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContributionDetails_LendHandID">
+          <End Type="andhimaModel.LendAHand" Role="LendAHand" Multiplicity="1" />
+          <End Type="andhimaModel.ContributionDetail" Role="ContributionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LendAHand">
+              <PropertyRef Name="LendAHandID" />
+            </Principal>
+            <Dependent Role="ContributionDetail">
+              <PropertyRef Name="LendAHandID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LendAHand_UserID">
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="andhimaModel.LendAHand" Role="LendAHand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="LendAHand">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserContactDetails_RegionCode">
+          <End Type="andhimaModel.RegionMaster" Role="RegionMaster" Multiplicity="1" />
+          <End Type="andhimaModel.UserContactDetail" Role="UserContactDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegionMaster">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="UserContactDetail">
+              <PropertyRef Name="RegionCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccount_TermsID">
+          <End Type="andhimaModel.TermsMaster" Role="TermsMaster" Multiplicity="1" />
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TermsMaster">
+              <PropertyRef Name="TermsID" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="TermsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Timeline_UserID">
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="andhimaModel.Timeline" Role="Timeline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Timeline">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContributionDetails_ContributorID">
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="andhimaModel.ContributionDetail" Role="ContributionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ContributionDetail">
+              <PropertyRef Name="ContributorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nominees_NomineeID">
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="andhimaModel.Nominee" Role="Nominee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Nominee">
+              <PropertyRef Name="NomineeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nominees_UserID">
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="andhimaModel.Nominee" Role="Nominee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Nominee">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserComments_UserID">
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="andhimaModel.UserComment" Role="UserComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserComment">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserContactDetails_UserID">
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="andhimaModel.UserContactDetail" Role="UserContactDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserContactDetail">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPersonalDetails_UserID">
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="andhimaModel.UserPersonalDetail" Role="UserPersonalDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserPersonalDetail">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CommentsUpVotedUsers">
+          <End Type="andhimaModel.UserComment" Role="UserComment" Multiplicity="*" />
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="*" />
+        </Association>
+        <Association Name="RegretedUsers">
+          <End Type="andhimaModel.Announcement" Role="Announcement" Multiplicity="*" />
+          <End Type="andhimaModel.UserAccount" Role="UserAccount" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="USP_getTimeline_Result">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="PostContent" Nullable="true" />
+          <Property Type="Int32" Name="PostType" Nullable="false" />
+          <Property Type="Int32" Name="Category" Nullable="false" />
+          <Property Type="Binary" Name="PostImage" Nullable="true" />
+          <Property Type="String" Name="VideoLink" Nullable="true" MaxLength="200" />
+          <Property Type="Binary" Name="CreationTimeStamp" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="TimelineID" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="true" />
+          <Property Type="String" Name="ToWhom" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="USP_getFamilyTree1_Result">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="MemberFirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MemberLastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Relationship" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="UserUniqueIndex" Nullable="false" />
+          <Property Type="Int32" Name="ParentChildLink" Nullable="false" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_fetchFamilyTree_Result">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="MemberFirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MemberLastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Relationship" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="UserUniqueIndex" Nullable="false" />
+          <Property Type="Int32" Name="ParentChildLink" Nullable="false" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfDemise" Nullable="true" />
+        </ComplexType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="andhimaModelStoreContainer" CdmEntityContainer="andhimaEntities">
+          <FunctionImportMapping FunctionImportName="AddUserAccount" FunctionName="andhimaModel.Store.AddUserAccount" />
+          <FunctionImportMapping FunctionImportName="LoginValidate" FunctionName="andhimaModel.Store.LoginValidate" />
+          <FunctionImportMapping FunctionImportName="USP_GetAllComments" FunctionName="andhimaModel.Store.USP_GetAllComments">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_GetAllComments_Result">
+                <ScalarProperty Name="CommentsID" ColumnName="CommentsID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+                <ScalarProperty Name="CommentsText" ColumnName="CommentsText" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UpVoteCount" ColumnName="UpVoteCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="deleteForgot" FunctionName="andhimaModel.Store.deleteForgot" />
+          <FunctionImportMapping FunctionImportName="insertForgotPw" FunctionName="andhimaModel.Store.insertForgotPw" />
+          <FunctionImportMapping FunctionImportName="resetpw" FunctionName="andhimaModel.Store.resetpw" />
+          <FunctionImportMapping FunctionImportName="checkResetCode" FunctionName="andhimaModel.Store.checkResetCode" />
+          <FunctionImportMapping FunctionImportName="getMailId" FunctionName="andhimaModel.Store.getMailId" />
+          <FunctionImportMapping FunctionImportName="USP_InsertComment" FunctionName="andhimaModel.Store.USP_InsertComment" />
+          <FunctionImportMapping FunctionImportName="USP_UpdateComment" FunctionName="andhimaModel.Store.USP_UpdateComment" />
+          <FunctionImportMapping FunctionImportName="USP_UpdateVote" FunctionName="andhimaModel.Store.USP_UpdateVote" />
+          <FunctionImportMapping FunctionImportName="USP_Fetch_Images" FunctionName="andhimaModel.Store.USP_Fetch_Images" />
+          <FunctionImportMapping FunctionImportName="getMailCount" FunctionName="andhimaModel.Store.getMailCount" />
+          <FunctionImportMapping FunctionImportName="CheckUserPresence" FunctionName="andhimaModel.Store.CheckUserPresence" />
+          <FunctionImportMapping FunctionImportName="getPersonalDetails" FunctionName="andhimaModel.Store.getPersonalDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.getPersonalDetails_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getUserID" FunctionName="andhimaModel.Store.getUserID" />
+          <FunctionImportMapping FunctionImportName="insertPersonal" FunctionName="andhimaModel.Store.insertPersonal" />
+          <FunctionImportMapping FunctionImportName="insertProfFB" FunctionName="andhimaModel.Store.insertProfFB" />
+          <FunctionImportMapping FunctionImportName="insertUserContact" FunctionName="andhimaModel.Store.insertUserContact" />
+          <FunctionImportMapping FunctionImportName="USP_FetchIndividualAnnouncement" FunctionName="andhimaModel.Store.USP_FetchIndividualAnnouncement">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_FetchIndividualAnnouncement_Result">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getContactDetails" FunctionName="andhimaModel.Store.getContactDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.getContactDetails_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="RegionCode" ColumnName="RegionCode" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getAnnouncementDetails" FunctionName="andhimaModel.Store.USP_getAnnouncementDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getAnnouncementDetails_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getAnnouncementDetailsFilterGenNm" FunctionName="andhimaModel.Store.USP_getAnnouncementDetailsFilterGenNm">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getAnnouncementDetailsFilterGenNm_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getAnnouncementDetailsFilterGenNmDt" FunctionName="andhimaModel.Store.USP_getAnnouncementDetailsFilterGenNmDt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getAnnouncementDetailsFilterGenNmDt_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getAnnouncementDetailsFilterGenNmFDt" FunctionName="andhimaModel.Store.USP_getAnnouncementDetailsFilterGenNmFDt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getAnnouncementDetailsFilterGenNmFDt_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getAnnouncementDetailsFilterGenNmTDt" FunctionName="andhimaModel.Store.USP_getAnnouncementDetailsFilterGenNmTDt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getAnnouncementDetailsFilterGenNmTDt_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getDetailsBasedOnFilters" FunctionName="andhimaModel.Store.USP_getDetailsBasedOnFilters">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getDetailsBasedOnFilters_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getFemaleAnnouncementDetails" FunctionName="andhimaModel.Store.USP_getFemaleAnnouncementDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getFemaleAnnouncementDetails_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getFemaleAnnouncementDetailsFilterGenNm" FunctionName="andhimaModel.Store.USP_getFemaleAnnouncementDetailsFilterGenNm">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNm_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getFemaleAnnouncementDetailsFilterGenNmDt" FunctionName="andhimaModel.Store.USP_getFemaleAnnouncementDetailsFilterGenNmDt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNmDt_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getFemaleAnnouncementDetailsFilterGenNmFDt" FunctionName="andhimaModel.Store.USP_getFemaleAnnouncementDetailsFilterGenNmFDt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNmFDt_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getFemaleAnnouncementDetailsFilterGenNmTDt" FunctionName="andhimaModel.Store.USP_getFemaleAnnouncementDetailsFilterGenNmTDt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getFemaleAnnouncementDetailsFilterGenNmTDt_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getMaleAnnouncementDetails" FunctionName="andhimaModel.Store.USP_getMaleAnnouncementDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getMaleAnnouncementDetails_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getMaleAnnouncementDetailsFilterGenNm" FunctionName="andhimaModel.Store.USP_getMaleAnnouncementDetailsFilterGenNm">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNm_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getMaleAnnouncementDetailsFilterGenNmDt" FunctionName="andhimaModel.Store.USP_getMaleAnnouncementDetailsFilterGenNmDt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNmDt_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getMaleAnnouncementDetailsFilterGenNmFDt" FunctionName="andhimaModel.Store.USP_getMaleAnnouncementDetailsFilterGenNmFDt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNmFDt_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getMaleAnnouncementDetailsFilterGenNmTDt" FunctionName="andhimaModel.Store.USP_getMaleAnnouncementDetailsFilterGenNmTDt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getMaleAnnouncementDetailsFilterGenNmTDt_Result">
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="DeceasedName" ColumnName="DeceasedName" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="CreatedUserName" ColumnName="CreatedUserName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_getUserAnouncement" FunctionName="andhimaModel.Store.USP_getUserAnouncement" />
+          <FunctionImportMapping FunctionImportName="updateProfile" FunctionName="andhimaModel.Store.updateProfile" />
+          <FunctionImportMapping FunctionImportName="updateprofilepic" FunctionName="andhimaModel.Store.updateprofilepic" />
+          <FunctionImportMapping FunctionImportName="Getname" FunctionName="andhimaModel.Store.Getname">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.Getname_Result">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_Add_Ann_Lend_Data" FunctionName="andhimaModel.Store.USP_Add_Ann_Lend_Data" />
+          <FunctionImportMapping FunctionImportName="USP_GetAnnouncementByUser" FunctionName="andhimaModel.Store.USP_GetAnnouncementByUser" />
+          <FunctionImportMapping FunctionImportName="USP_GetAllAnnouncement" FunctionName="andhimaModel.Store.USP_GetAllAnnouncement" />
+          <FunctionImportMapping FunctionImportName="USP_LAHDetails" FunctionName="andhimaModel.Store.USP_LAHDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_LAHDetails_Result">
+                <ScalarProperty Name="LAHID" ColumnName="LAHID" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="LAH_message" ColumnName="LAH_message" />
+                <ScalarProperty Name="amountPledge" ColumnName="amountPledge" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_Regreted" FunctionName="andhimaModel.Store.USP_Regreted" />
+          <EntitySetMapping Name="AddressTypeMasters">
+            <EntityTypeMapping TypeName="andhimaModel.AddressTypeMaster">
+              <MappingFragment StoreEntitySet="AddressTypeMaster">
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Announcements">
+            <EntityTypeMapping TypeName="andhimaModel.Announcement">
+              <MappingFragment StoreEntitySet="Announcements">
+                <ScalarProperty Name="RegretCount" ColumnName="RegretCount" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="ContentImage" ColumnName="ContentImage" />
+                <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="AnnouncementText" ColumnName="AnnouncementText" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ExpiredLocation" ColumnName="ExpiredLocation" />
+                <ScalarProperty Name="BaseLocation" ColumnName="BaseLocation" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="AnnouncementType" ColumnName="AnnouncementType" />
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FamilyTrees">
+            <EntityTypeMapping TypeName="andhimaModel.FamilyTree">
+              <MappingFragment StoreEntitySet="FamilyTree">
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="MemberImage" ColumnName="MemberImage" />
+                <ScalarProperty Name="ParentChildLink" ColumnName="ParentChildLink" />
+                <ScalarProperty Name="UserUniqueIndex" ColumnName="UserUniqueIndex" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="MemberLastName" ColumnName="MemberLastName" />
+                <ScalarProperty Name="MemberFirstName" ColumnName="MemberFirstName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ForgotPasswords">
+            <EntityTypeMapping TypeName="andhimaModel.ForgotPassword">
+              <MappingFragment StoreEntitySet="ForgotPassword">
+                <ScalarProperty Name="HashUserID" ColumnName="HashUserID" />
+                <ScalarProperty Name="HashMailID" ColumnName="HashMailID" />
+                <ScalarProperty Name="UserEmailID" ColumnName="UserEmailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LendAHands">
+            <EntityTypeMapping TypeName="andhimaModel.LendAHand">
+              <MappingFragment StoreEntitySet="LendAHand">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="AmountPledged" ColumnName="AmountPledged" />
+                <ScalarProperty Name="LendAHandText" ColumnName="LendAHandText" />
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="LendAHandID" ColumnName="LendAHandID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegionMasters">
+            <EntityTypeMapping TypeName="andhimaModel.RegionMaster">
+              <MappingFragment StoreEntitySet="RegionMaster">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TermsMasters">
+            <EntityTypeMapping TypeName="andhimaModel.TermsMaster">
+              <MappingFragment StoreEntitySet="TermsMaster">
+                <ScalarProperty Name="CreatedTimeStamp" ColumnName="CreatedTimeStamp" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="TermText" ColumnName="TermText" />
+                <ScalarProperty Name="TermsID" ColumnName="TermsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Timelines">
+            <EntityTypeMapping TypeName="andhimaModel.Timeline">
+              <MappingFragment StoreEntitySet="Timeline">
+                <ScalarProperty Name="ToWhom" ColumnName="ToWhom" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="TimelineID" ColumnName="TimelineID" />
+                <ScalarProperty Name="CreationTimeStamp" ColumnName="CreationTimeStamp" />
+                <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+                <ScalarProperty Name="PostImage" ColumnName="PostImage" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="PostType" ColumnName="PostType" />
+                <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccounts">
+            <EntityTypeMapping TypeName="andhimaModel.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="AgreedToTermsDate" ColumnName="AgreedToTermsDate" />
+                <ScalarProperty Name="TermsID" ColumnName="TermsID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="EmailVerified" ColumnName="EmailVerified" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserComments">
+            <EntityTypeMapping TypeName="andhimaModel.UserComment">
+              <MappingFragment StoreEntitySet="UserComments">
+                <ScalarProperty Name="UpVoteCount" ColumnName="UpVoteCount" />
+                <ScalarProperty Name="ModerationPending" ColumnName="ModerationPending" />
+                <ScalarProperty Name="CreatedByCurrentUser" ColumnName="CreatedByCurrentUser" />
+                <ScalarProperty Name="CreatedByAdmin" ColumnName="CreatedByAdmin" />
+                <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CommentsText" ColumnName="CommentsText" />
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CommentsID" ColumnName="CommentsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnnoucementUserMappings">
+            <EntityTypeMapping TypeName="andhimaModel.AnnoucementUserMapping">
+              <MappingFragment StoreEntitySet="AnnoucementUserMapping">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContributionDetails">
+            <EntityTypeMapping TypeName="andhimaModel.ContributionDetail">
+              <MappingFragment StoreEntitySet="ContributionDetails">
+                <ScalarProperty Name="ContributedDateTime" ColumnName="ContributedDateTime" />
+                <ScalarProperty Name="AmountContributed" ColumnName="AmountContributed" />
+                <ScalarProperty Name="ContributorID" ColumnName="ContributorID" />
+                <ScalarProperty Name="LendAHandID" ColumnName="LendAHandID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nominees">
+            <EntityTypeMapping TypeName="andhimaModel.Nominee">
+              <MappingFragment StoreEntitySet="Nominees">
+                <ScalarProperty Name="Registered" ColumnName="Registered" />
+                <ScalarProperty Name="NomineeOrder" ColumnName="NomineeOrder" />
+                <ScalarProperty Name="NomineeID" ColumnName="NomineeID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserContactDetails">
+            <EntityTypeMapping TypeName="andhimaModel.UserContactDetail">
+              <MappingFragment StoreEntitySet="UserContactDetails">
+                <ScalarProperty Name="RegionCode" ColumnName="RegionCode" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPersonalDetails">
+            <EntityTypeMapping TypeName="andhimaModel.UserPersonalDetail">
+              <MappingFragment StoreEntitySet="UserPersonalDetails">
+                <ScalarProperty Name="ProfileImageURL" ColumnName="ProfileImageURL" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CommentsUpVotedUsers" TypeName="andhimaModel.CommentsUpVotedUsers" StoreEntitySet="CommentsUpVotedUsers">
+            <EndProperty Name="UserAccount">
+              <ScalarProperty Name="UserID" ColumnName="UpVotedUserID" />
+            </EndProperty>
+            <EndProperty Name="UserComment">
+              <ScalarProperty Name="CommentsID" ColumnName="CommentsID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="RegretedUsers" TypeName="andhimaModel.RegretedUsers" StoreEntitySet="RegretedUsers">
+            <EndProperty Name="UserAccount">
+              <ScalarProperty Name="UserID" ColumnName="UserID" />
+            </EndProperty>
+            <EndProperty Name="Announcement">
+              <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="USP_Add_Ann_Lend_Data_OTHER" FunctionName="andhimaModel.Store.USP_Add_Ann_Lend_Data_OTHER" />
+          <FunctionImportMapping FunctionImportName="USP_GetAnnouncementID" FunctionName="andhimaModel.Store.USP_GetAnnouncementID" />
+          <FunctionImportMapping FunctionImportName="USP_getTimeline" FunctionName="andhimaModel.Store.USP_getTimeline">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_getTimeline_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+                <ScalarProperty Name="PostType" ColumnName="PostType" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="PostImage" ColumnName="PostImage" />
+                <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+                <ScalarProperty Name="CreationTimeStamp" ColumnName="CreationTimeStamp" />
+                <ScalarProperty Name="TimelineID" ColumnName="TimelineID" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ToWhom" ColumnName="ToWhom" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_insertEvent" FunctionName="andhimaModel.Store.USP_insertEvent" />
+          <FunctionImportMapping FunctionImportName="USP_GetAllLAH" FunctionName="andhimaModel.Store.USP_GetAllLAH" />
+          <FunctionImportMapping FunctionImportName="USP_getUserLAH" FunctionName="andhimaModel.Store.USP_getUserLAH" />
+          <FunctionImportMapping FunctionImportName="USP_reomoveNodeFTree" FunctionName="andhimaModel.Store.USP_reomoveNodeFTree" />
+          <FunctionImportMapping FunctionImportName="USP_updateFamilyTree" FunctionName="andhimaModel.Store.USP_updateFamilyTree" />
+          <FunctionImportMapping FunctionImportName="USP_fetchFamilyTree" FunctionName="andhimaModel.Store.USP_fetchFamilyTree">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andhimaModel.USP_fetchFamilyTree_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="MemberFirstName" ColumnName="MemberFirstName" />
+                <ScalarProperty Name="MemberLastName" ColumnName="MemberLastName" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="UserUniqueIndex" ColumnName="UserUniqueIndex" />
+                <ScalarProperty Name="ParentChildLink" ColumnName="ParentChildLink" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfDemise" ColumnName="DateOfDemise" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
